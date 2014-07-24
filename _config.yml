@@ -2,9 +2,13 @@
 title: Netshoes Styleguide
 email: desenv.lojas@netshoes.com
 description: "This are the conventions for Netshoes' coding style"
-baseurl: ""
+baseurl: "http://netshoes.github.io/styleguide"
 url: "http://netshoes.github.io/styleguide"
 
 # Build settings
 markdown: kramdown
 permalink: pretty
+
+# Template vars
+githubUsername: "netshoes"
+twitterUsername: "siganetshoes"
