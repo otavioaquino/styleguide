@@ -38,7 +38,7 @@ We use a pretty common workflow for out GIT interactions, based on [Vincent Drie
 
 For all our main rules on code harmony and compatibility, we're using this `.editorconfig` as our main standard:
 
-```
+{% highlight bash %}
 # editorconfig.org
 
 root = true
@@ -55,8 +55,7 @@ insert_final_newline = true
 trim_trailing_whitespace = false
 insert_final_newline = varies
 end_of_line = varies
-
-```
+{% endhighlight %}
 
 For more info about `.editorconfig` or to get it working on your code editor, please visit: [http://editorconfig.org/](http://editorconfig.org/)
 
@@ -85,7 +84,7 @@ We also decided to use the SCSS syntax in favor of a lower learning curve for ne
 * If your class have nesting childs, comment make a comment on `}` with the rule you're closing: (`} // .ns-wrapper a`).
 Here is a good syntax example:
 
-``` scss
+{% highlight css %}
 /*
 Link styling for the main content container
 
@@ -115,7 +114,7 @@ Styleguide 0.0.1
   }
 
 } // .netshoes
-```
+{% endhighlight %}
 
 ## Markup
 
