@@ -7,7 +7,7 @@ permalink: /
 ![Netshoes](http://i.imgur.com/5RBW4vv.png)
 
 # Netshoes Styleguide
-*last update: 2014-07-24*
+*last update: 2014-08-19*
 
 Welcome to the Netshoes engineering team standards. Here you will find what we assume to be the best practices and avoid absence of consistence between code.
 
