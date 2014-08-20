@@ -1,5 +1,5 @@
-<<<<<<< HEAD
+.DS_Store
+
 _site
-=======
-_site/
->>>>>>> 15cf25314bfc1a3ed3d0cf5a414f16aab4792a92
+.grunt
+node_modules
