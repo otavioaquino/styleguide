@@ -1,23 +1,51 @@
 #Netshoes - Code Styleguide
 
-> en-US
+## Netshoes JavaScript Style Guide
 
-Here you can find the way we believe and prefer to do our code.
+*A mostly reasonable approach to JavaScript*
 
-Our code styleguide is available in english only, as far as we deal with development team around the globe, thi is our choice.
+### Topics
 
-You can access our web version through the URL: [https://netshoes.github.io/styleguide](https://netshoes.github.io/styleguide).
+* [EditorConfig](http://editorconfig.org/)  
+* [Linting](http://contribute.jquery.org/style-guide/js/#linting)  
+* [Types](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Objects](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Arrays](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Strings](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Functions](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Properties](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Variables](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Hoisting](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Comparison](erators https://github.com/airbnb/javascript/tree/master/es5)  
+* [Blocks](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Comments](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Whitespace](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Commas](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Semicolons](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Type](sting https://github.com/airbnb/javascript/tree/master/es5)  
+* [Naming](nventions https://github.com/airbnb/javascript/tree/master/es5)  
+* [Accessors](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Constructors](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Events](https://github.com/airbnb/javascript/tree/master/es5)  
+* [jQuery](https://github.com/airbnb/javascript/tree/master/es5)  
+* [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)  
+* [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)  
 
-You can also see it directly on GitHub, through this URL: [https://github.com/netshoes/styleguide/blob/master/index.md](https://github.com/netshoes/styleguide/blob/master/index.md)
+## Example topic
 
------
+ - [1.1](#1.1) <a name='1.1'></a> some quick example description
 
-> pt-BR
+  > Reason to use it like this
 
-Aqui você encontra a maneira que acreditamos e preferimos programar.
+    ```javascript
+    // bad
+    // multiple examples of bad code
 
-O guia de estilo está disponível apenas em inglês, uma vez que temos equipes de desenvolvimento espalhadas pelo mundo, preferimos dessa forma.
+    // good
+    // multiple examples of good code
+    ```
 
-Você pode acessar a versão web pelo seguinte endereço: [https://netshoes.github.io/styleguide](https://netshoes.github.io/styleguide).
 
-Se preferir, pode acessar diretamente pelo GitHub: [https://github.com/netshoes/styleguide/blob/master/index.md](https://github.com/netshoes/styleguide/blob/master/index.md).
+- **[⬆ back to top](#topics)**
+
+
