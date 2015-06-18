@@ -33,7 +33,7 @@
 
 ## Example topic
 
- - [1.1](#1.1) <a name='1.1'></a> some quick example description
+ - [00.0](#00.0)<a name='00.0'></a> some quick example description
 
   > Reason to use it like this
 
@@ -48,4 +48,146 @@
 
 - **[⬆ back to top](#topics)**
 
+## Whitespace
 
+ - [00.0](#00.0)<a name='00.0'></a>Use soft tabs set to 2 spaces.
+
+    ```javascript
+    // bad
+    function() {
+    ∙∙∙∙var name;
+    }
+
+    // bad
+    function() {
+    ∙var name;
+    }
+
+    // good
+    function() {
+    ∙∙var name;
+    }
+    ```
+
+ - [00.0](#00.0)<a name='00.0'></a>Place 1 space before the leading brace.
+
+    ```javascript
+    // bad
+    function test(){
+      console.log('test');
+    }
+
+    // good
+    function test() {
+      console.log('test');
+    }
+
+    // bad
+    dog.set('attr',{
+      age: '1 year',
+      breed: 'Bernese Mountain Dog'
+    });
+
+    // good
+    dog.set('attr', {
+      age: '1 year',
+      breed: 'Bernese Mountain Dog'
+    });
+    ```
+
+ - [00.0](#00.0)<a name='00.0'></a>Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space before the argument list in function calls and declarations.
+
+    ```javascript
+    // bad
+    if(isJedi) {
+      fight ();
+    }
+
+    // good
+    if (isJedi) {
+      fight();
+    }
+
+    // bad
+    function fight () {
+      console.log ('Swooosh!');
+    }
+
+    // good
+    function fight() {
+      console.log('Swooosh!');
+    }
+    ```
+
+ - [00.0](#00.0)<a name='00.0'></a>Set off operators with spaces.
+
+    ```javascript
+    // bad
+    var x=y+5;
+
+    // good
+    var x = y + 5;
+    ```
+
+ - [00.0](#00.0)<a name='00.0'></a>End files with a single newline character.
+
+    ```javascript
+    // bad
+    (function(global) {
+      // ...stuff...
+    })(this);
+    ```
+
+    ```javascript
+    // bad
+    (function(global) {
+      // ...stuff...
+    })(this);↵
+    ↵
+    ```
+
+    ```javascript
+    // good
+    (function(global) {
+      // ...stuff...
+    })(this);↵
+    ```
+
+ - [00.0](#00.0)<a name='00.0'></a>Leave a blank line after blocks and before the next statement
+
+    ```javascript
+    // bad
+    if (foo) {
+      return bar;
+    }
+    return baz;
+
+    // good
+    if (foo) {
+      return bar;
+    }
+
+    return baz;
+
+    // bad
+    var obj = {
+      foo: function() {
+      },
+      bar: function() {
+      }
+    };
+    return obj;
+
+    // good
+    var obj = {
+      foo: function() {
+      },
+
+      bar: function() {
+      }
+    };
+
+    return obj;
+    ```
+
+**[⬆ back to top](#table-of-contents)**
