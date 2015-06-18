@@ -31,20 +31,91 @@
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
-## Example topic
+## Constructors
 
- - [1.1](#1.1) <a name='1.1'></a> some quick example description
+ - [1.1](#1.1) <a name='1.1'></a> Use capital letter when creating a Constructor function.
+  > It makes easier to indentify Contructors and common functions
 
-  > Reason to use it like this
+```javascript
+// bad
+function gang() {
 
-    ```javascript
-    // bad
-    // multiple examples of bad code
+}
 
-    // good
-    // multiple examples of good code
-    ```
+// bad
+function GANG() {
 
+}
+
+// good
+function Gang() {
+
+}
+```
+
+ - [1.2](#1.2) <a name='1.2'></a> Assign methods to the prototype object, instead of overwriting the prototype with a new object.
+ > Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+
+```javascript
+function Gang() {
+
+}
+
+// bad
+Gang.prototype = {
+  fight: function fight() {
+    console.log('fighting');
+  },
+
+  block: function block() {
+    console.log('blocking');
+  }
+};
+
+// good
+Gang.prototype.fight = function fight() {
+  console.log('fighting');
+};
+
+Gang.prototype.block = function block() {
+  console.log('blocking');
+};
+```
+
+- [1.3](#1.3) <a name='1.3'></a> Methods can return `this`.
+ > Returning `this` helps method chaining. But it's not mandatory to do it.
+
+```javascript
+// bad
+Gang.prototype.jump = function() {
+  this.jumping = true;
+  return true;
+};
+
+Gang.prototype.setHeight = function(height) {
+  this.height = height;
+};
+
+var yo = new Gang();
+yo.jump(); // => true
+yo.setHeight(20); // => undefined
+
+// good
+Gang.prototype.jump = function() {
+  this.jumping = true;
+  return this;
+};
+
+Gang.prototype.setHeight = function(height) {
+  this.height = height;
+  return this;
+};
+
+var yo = new Gang();
+
+yo.jump()
+  .setHeight(20);
+```
 
 - **[⬆ back to top](#topics)**
 
