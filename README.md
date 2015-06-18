@@ -37,6 +37,13 @@
 
 ```javascript
 // bad
+elements
+  .addClass( "foo" );
+
+// good
+elements.addClass( "foo" );
+
+// bad
 elements.addClass( "foo" ).children().html( "hello" ).end().appendTo( "body" );
 
 // good
