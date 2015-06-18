@@ -57,18 +57,18 @@
     $el.click(this.onClick);
 
     // good
-    $el.on.('click', this.onClick);
+    $el.on('click', this.onClick);
     ```
  - After atach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
 
     ```js
     // bad
-    $el.on.('click', this.myMotherFuckingCustomEventThatWillReturnTrue);
+    $el.on('click', this.myMotherFuckingCustomEventThatWillReturnTrue);
 
     // good
-    $el.on.('click', this.onClick);
-    $el.on.('hover', this.onHover);
-    $el.on.('mouseleave', this.onMouseLeave);
+    $el.on('click', this.onClick);
+    $el.on('hover', this.onHover);
+    $el.on('mouseleave', this.onMouseLeave);
     ```
 
   **[⬆ back to top](#table-of-contents)**
