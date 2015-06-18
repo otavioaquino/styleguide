@@ -48,4 +48,27 @@
 
 - **[⬆ back to top](#topics)**
 
+## EditorConfig
+
+ - [1.1](#1.1) <a name='1.1'></a> We chosen to use [EditorConfig](http://editorconfig.org/) to maintain our code consistency, you IDE should be compatible with this plugin. [Here](http://editorconfig.org/#download) is a list of available IDE's.
+
+  > Let's keep a consistency in our projects, it should look like it was written by the same person 😏
+
+    ```bash
+    # http://editorconfig.org
+    root = true
+
+    [*]
+    indent_style = space
+    indent_size = 2
+    end_of_line = lf
+    charset = utf-8
+    trim_trailing_whitespace = true
+    insert_final_newline = true
+    ```
+
+    [Here](./.editorconfig) is our actual `.editorconfig` config file.
+
+
+- **[⬆ back to top](#topics)**
 
