@@ -31,19 +31,104 @@
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
-## Example topic
+## Naming Conventions
 
- - [1.1](#1.1) <a name='1.1'></a> some quick example description
+ - [1.1](#1.1) <a name='1.1'></a> Avoid single letter names.
 
-  > Reason to use it like this
+  > Developers don't have crystal balls, be descriptive with your naming.
 
-    ```javascript
-    // bad
-    // multiple examples of bad code
+```javascript
+// awful
+function q() {
+  // ...stuff...
+}
 
-    // good
-    // multiple examples of good code
-    ```
+// good
+function query() {
+  // ..stuff..
+}
+```
+
+ - [1.2](#1.2) <a name='1.2'></a> Use camelCase when naming objects, functions, and instances.
+
+ ```javascript
+// awful
+function q() {
+  // ...stuff...
+}
+
+// good
+// bad
+var OBJEcttsssss = {};
+var this_is_my_object = {};
+var o = {};
+function c() {}
+
+// good
+var thisIsMyObject = {};
+function thisIsMyFunction() {}
+```
+
+ - [1.3](#1.3) <a name='1.3'></a> Use PascalCase when naming constructors or classes.
+
+```javascript
+// bad
+function user(options) {
+  this.name = options.name;
+}
+
+var bad = new user({
+  name: 'nope'
+});
+
+// good
+function User(options) {
+  this.name = options.name;
+}
+
+var good = new User({
+  name: 'yup'
+});
+```
+
+ - Name your functions.
+
+ > This is helpful for stack traces.
+
+```javascript
+// bad
+var log = function(msg) {
+  console.log(msg);
+};
+
+// good
+var log = function log(msg) {
+  console.log(msg);
+};
+```
+
+ - Your files should be the name of the main module you are exporting, but kebab-case.
+
+```javascript
+// file contents
+class CheckBox {
+  // ...
+}
+module.exports = CheckBox;
+
+// in some other file
+// bad
+var CheckBox = require('./checkBox');
+
+// bad
+var CheckBox = require('./check_box');
+
+// bad
+var CheckBox = require('./CheckBox');
+
+// good
+var CheckBox = require('./check-box');
+```
 
 
 - **[⬆ back to top](#topics)**
