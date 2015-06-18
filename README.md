@@ -31,20 +31,46 @@
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
-## Example topic
+## Functions
 
- - [1.1](#1.1) <a name='1.1'></a> some quick example description
+ - [1.1](#1.1) <a name='1.1'></a> Prefer to use named function expression instead of anonymous function expression
 
-  > Reason to use it like this
+  > This helps you to debug your code, since the dev tools will show the name of the context which the error ocurred.
 
-    ```javascript
-    // bad
-    // multiple examples of bad code
+```javascript
+// bad
+var anonymous = function() {}
 
-    // good
-    // multiple examples of good code
-    ```
+// good
+var named = function named() {}
+```
 
+ - [1.2](#1.2) <a name='1.2'></a> Never declare a function in a non-function block.
+
+```javascript
+// bad
+while(true) {
+  function test() {
+    return false;
+  }
+}
+```
+
+ - [1.3](#1.3) <a name='1.3'></a> Never name a parameter `arguments`.
+
+  > This will take precedence over the `arguments` object that is given to every function scope.
+
+```javascript
+// bad
+function nope(name, options, arguments) {
+  // ...stuff...
+}
+
+// good
+function yup(name, options, args) {
+  // ...stuff...
+}
+```
 
 - **[⬆ back to top](#topics)**
 
