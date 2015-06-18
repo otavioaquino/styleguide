@@ -31,19 +31,23 @@
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
-## Example topic
+## Switch Statements
 
- - [1.1](#1.1) <a name='1.1'></a> some quick example description
+ - [1.1](#1.1) <a name='1.1'></a> The usage of switch statements is generally discouraged, but can be useful when there are a large number of cases.
 
-  > Reason to use it like this
-
-    ```javascript
-    // bad
-    // multiple examples of bad code
-
-    // good
-    // multiple examples of good code
-    ```
+```javascript
+// good
+switch ( event.keyCode ) {
+  case 1:
+    x();
+    break;
+  case 2:
+    y();
+    break;
+  default:
+    z();
+}
+```
 
 
 - **[⬆ back to top](#topics)**
