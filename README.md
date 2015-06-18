@@ -48,32 +48,27 @@
 
 - **[⬆ back to top](#topics)**
 
-## Events
+## DOM Events
 
-  - When attaching data payloads to events (whether DOM events or something more proprietary like Backbone events), pass a hash instead of a raw value. This allows a subsequent contributor to add more data to the event payload without finding and updating every handler for the event. For example, instead of:
+ - When attaching dom events (such as click, hover, etc) use the `on` approach and never use `event/alias`
 
     ```js
     // bad
-    $(this).trigger('listingUpdated', listing.id);
+    $el.click(this.onClick);
 
-    ...
-
-    $(this).on('listingUpdated', function(e, listingId) {
-      // do something with listingId
-    });
+    // good
+    $el.on.('click', this.onClick);
     ```
-
-    prefer:
+ - After atach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
 
     ```js
+    // bad
+    $el.on.('click', this.myMotherFuckingCustomEventThatWillReturnTrue);
+
     // good
-    $(this).trigger('listingUpdated', { listingId : listing.id });
-
-    ...
-
-    $(this).on('listingUpdated', function(e, data) {
-      // do something with data.listingId
-    });
+    $el.on.('click', this.onClick);
+    $el.on.('hover', this.onHover);
+    $el.on.('mouseleave', this.onMouseLeave);
     ```
 
   **[⬆ back to top](#table-of-contents)**
