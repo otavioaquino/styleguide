@@ -59,7 +59,7 @@
     // good
     $el.on('click', this.onClick);
     ```
- - After atach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
+ - After attach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
 
     ```js
     // bad
@@ -69,6 +69,29 @@
     $el.on('click', this.onClick);
     $el.on('hover', this.onHover);
     $el.on('mouseleave', this.onMouseLeave);
+    ```
+ - Prefer to use a method named `bind` to create any event attachment of your needs.
+
+    ```js
+    // bad
+    function Awesome() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    }
+
+    // good
+    function Awesome() {
+      this.bind();
+    }
+
+    Awesome.prototype.bind = function() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    };
     ```
 
   **[⬆ back to top](#table-of-contents)**
