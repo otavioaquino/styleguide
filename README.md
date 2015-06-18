@@ -111,9 +111,10 @@ var log = function log(msg) {
 
 ```javascript
 // file contents
-class CheckBox {
-  // ...
+function CheckBox() {
+  // code
 }
+
 module.exports = CheckBox;
 
 // in some other file
