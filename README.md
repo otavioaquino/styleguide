@@ -41,7 +41,7 @@
 // super bad
 superPower = new SuperPower();
 
-// suer good
+// super good
 var superPower = new SuperPower();
 ```
 
