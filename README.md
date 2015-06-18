@@ -33,7 +33,7 @@
 
 ## Chained Method Calls
 
- - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is too long to fit on one line, there must be one call per line, with the first call on a separate line from the object the methods are called on. If the method changes the context, an extra level of indentation must be used.
+ - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is bigger than one, there must be one call per line, with the first call on a separate line from the object the methods are called on.
 
 ```javascript
 // bad
@@ -43,7 +43,7 @@ elements.addClass( "foo" ).children().html( "hello" ).end().appendTo( "body" );
 elements
   .addClass( "foo" )
   .children()
-    .html( "hello" )
+  .html( "hello" )
   .end()
   .appendTo( "body" );
 ```
