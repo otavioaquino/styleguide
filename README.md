@@ -1,6 +1,11 @@
-#Netshoes - Code Styleguide
+# Netshoes - Code Styleguide
 
-## Netshoes JavaScript Style Guide
+![Netshoes](http://i.imgur.com/5RBW4vv.png)
+
+Welcome to the Netshoes engineering team standards. Here you will find what we assume to be the best practices and avoid absence of consistence between code.
+As far as our projects are made by more than one person, we should find out a way to be consistent about the quality and the code we create. Feel free to send Pull Requests and suggest new standards.
+
+## JavaScript Style Guide
 
 *A mostly reasonable approach to JavaScript*
 
