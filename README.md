@@ -48,4 +48,56 @@
 
 - **[⬆ back to top](#topics)**
 
+## Arrays
 
+ - [00.0](#00.0) <a name='00.0'></a> Use the literal syntax for array creation.
+
+  > Literal syntax can be way faster 💪
+
+    ```javascript
+    // bad
+    var items = new Array();
+
+    // good
+    var items = [];
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> Use Array#push instead of direct assignment to add items to an array.
+
+    ```javascript
+    var someStack = [];
+
+
+    // bad
+    someStack[someStack.length] = 'abracadabra';
+
+    // good
+    someStack.push('abracadabra');
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+
+    ```javascript
+    var len = items.length;
+    var itemsCopy = [];
+    var i;
+
+    // bad
+    for (i = 0; i < len; i++) {
+      itemsCopy[i] = items[i];
+    }
+
+    // good
+    itemsCopy = items.slice();
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> To convert an array-like object to an array, use Array#slice.
+
+    ```javascript
+    function trigger() {
+      var args = Array.prototype.slice.call(arguments);
+      ...
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
