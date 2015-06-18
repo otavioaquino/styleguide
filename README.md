@@ -136,7 +136,7 @@
 
 ### Example
 
-    ```javascript
+  ```javascript
     // bad
     function example() {
       lol(); // => YOLO
@@ -154,7 +154,7 @@
     function example() {
       lol(); // => YOLO
     }
-    ```
+  ```
 
   - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
 
