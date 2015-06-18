@@ -53,7 +53,7 @@
 
   - Use JSHint to detect errors and potential problems. Every project should have a Grunt task for linting all JavaScript files: `grunt jshint`. The options for JSHint are stored in a `.jshintrc` file.
 
-  - All options must be alphabetized and grouped:
+  - All options must be alphabetized and grouped (just an example):
 
     ```json
     {
