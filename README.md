@@ -31,19 +31,22 @@
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
-## Example topic
+## Chained Method Calls
 
- - [1.1](#1.1) <a name='1.1'></a> some quick example description
+ - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is too long to fit on one line, there must be one call per line, with the first call on a separate line from the object the methods are called on. If the method changes the context, an extra level of indentation must be used.
 
-  > Reason to use it like this
+```javascript
+// bad
+elements.addClass( "foo" ).children().html( "hello" ).end().appendTo( "body" );
 
-    ```javascript
-    // bad
-    // multiple examples of bad code
-
-    // good
-    // multiple examples of good code
-    ```
+// good
+elements
+  .addClass( "foo" )
+  .children()
+    .html( "hello" )
+  .end()
+  .appendTo( "body" );
+```
 
 
 - **[⬆ back to top](#topics)**
