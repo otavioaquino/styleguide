@@ -36,20 +36,45 @@ As far as our projects are made by more than one person, we should find out a wa
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
-## Example topic
+## Properties
 
- - [00.0](#00.0)<a name='00.0'></a> some quick example description
+  - Use dot notation to access properties.
 
-  > Reason to use it like this
+  > Dot notation is simpler and enforces `camelCase` when naming object keys.
 
-    ```javascript
-    // bad
-    // multiple examples of bad code
+  ```javascript
+  var user = {
+    name: 'John',
+    age: 42
+  };
 
-    // good
-    // multiple examples of good code
-    ```
+  // Bad
+  var userName = user['name'];
 
+  // Good
+  var userAge = user.age;
+  ```
+
+  - Use subscript notation `[]` to access dynamic properties or properties that are also JavaScript reserved words.
+
+  > Subscript notation is sometimes tricky and should be used only when really needed.
+
+  ```javascript
+  var config = {
+    id: 'foo',
+    'class': 'bar'
+  };
+
+  function getConfigData(data) {
+    return config[data];
+  }
+
+  // Accessing dynamic data
+  getConfigData('id'); // 'foo'
+
+  // Accessing a key that is also a JavaScript reserved word
+  config['class']; // 'bar'
+  ```
 
 - **[⬆ back to top](#topics)**
 
