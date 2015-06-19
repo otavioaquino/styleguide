@@ -195,7 +195,6 @@ As far as our projects are made by more than one person, we should find out a wa
     return obj;
     ```
 
-=======
 ## Types
 
   - **Primitives**: When you access a primitive type you work directly on its value.
