@@ -37,7 +37,7 @@
 
 ```javascript
 // good
-switch ( event.keyCode ) {
+switch (event.keyCode) {
   case 1:
     x();
     break;
