@@ -53,6 +53,54 @@ As far as our projects are made by more than one person, we should find out a wa
 
 - **[⬆ back to top](#topics)**
 
+## DOM Events
+
+ - When attaching dom events (such as click, hover, etc) use the `on` approach and never use `event/alias`
+
+    ```js
+    // bad
+    $el.click(this.onClick);
+
+    // good
+    $el.on('click', this.onClick);
+    ```
+ - After attach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
+
+    ```js
+    // bad
+    $el.on('click', this.myMotherFuckingCustomEventThatWillReturnTrue);
+
+    // good
+    $el.on('click', this.onClick);
+    $el.on('hover', this.onHover);
+    $el.on('mouseleave', this.onMouseLeave);
+    ```
+ - Prefer to use a method named `bind` to create any event attachment of your needs.
+
+    ```js
+    // bad
+    function Awesome() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    }
+
+    // good
+    function Awesome() {
+      this.bind();
+    }
+
+    Awesome.prototype.bind = function() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    };
+    ```
+
+  **[⬆ back to top](#table-of-contents)**
+
 ## EditorConfig
 
  - [1.1](#1.1) <a name='1.1'></a> We chosen to use [EditorConfig](http://editorconfig.org/) to maintain our code consistency, your IDE should be compatible with this plugin. [Here](http://editorconfig.org/#download) is a list of available IDE's.
