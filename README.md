@@ -207,17 +207,17 @@ As far as our projects are made by more than one person, we should find out a wa
     ```javascript
     // bad - git diff without trailing comma
     var hero = {
-         firstName: 'Florence',
-    -    lastName: 'Nightingale'
-    +    lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb graph', 'mordern nursing']
+      firstName: 'Florence',
+      lastName: 'Nightingale'
+      lastName: 'Nightingale',
+      inventorOf: ['coxcomb graph', 'mordern nursing']
     }
 
     // good - git diff with trailing comma
     var hero = {
-         firstName: 'Florence',
-         lastName: 'Nightingale',
-    +    inventorOf: ['coxcomb chart', 'mordern nursing'],
+      firstName: 'Florence',
+      lastName: 'Nightingale',
+      inventorOf: ['coxcomb chart', 'mordern nursing'],
     }
 
     // bad
