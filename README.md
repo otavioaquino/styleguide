@@ -1052,4 +1052,56 @@ function() {
     }
     ```
 
+## Accessors
+
+ - [00.0](#00.0) <a name='00.0'></a> Accessor functions for properties are not required.
+ - [00.0](#00.0) <a name='00.0'></a> If you do make accessor functions use getVal() and setVal('hello').
+
+  > Makes way more sense to use `getters` and `setters` to retrieve and set values, and really easy to identify what those methods are doing.
+
+    ```javascript
+    // bad
+    dragon.age();
+
+    // good
+    dragon.getAge();
+
+    // bad
+    dragon.age(25);
+
+    // good
+    dragon.setAge(25);
+    ```
+
+ - [00.0](#00) <a name='00.0'></a> If the property is a boolean, use isVal() or hasVal().
+
+    ```javascript
+    // bad
+    if (!dragon.age()) {
+      return false;
+    }
+
+    // good
+    if (!dragon.hasAge()) {
+      return false;
+    }
+    ```
+ - [00.0](#00.0) <a name='00.0'></a> It's okay to create get() and set() functions, but be consistent.
+
+    ```javascript
+    function Jedi(options) {
+      options || (options = {});
+      var lightsaber = options.lightsaber || 'blue';
+      this.set('lightsaber', lightsaber);
+    }
+
+    Jedi.prototype.set = function(key, val) {
+      this[key] = val;
+    };
+
+    Jedi.prototype.get = function(key) {
+      return this[key];
+    };
+    ```
+
 **[⬆ back to top](#table-of-contents)**
