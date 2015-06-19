@@ -160,6 +160,7 @@ As far as our projects are made by more than one person, we should find out a wa
 
     // good
     var hasAge = !!age;
+    ```
 
 **[⬆ back to top](#table-of-contents)**
 
