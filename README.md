@@ -244,3 +244,19 @@ As far as our projects are made by more than one person, we should find out a wa
     ```
 
 **[⬆ back to top](#table-of-contents)**
+
+## Linting
+
+  - Use JSHint to detect errors and potential problems. Every project should have a Grunt task for linting all JavaScript files: `grunt jshint`. The options for JSHint are stored in a `.jshintrc` file.
+
+  - All options must be alphabetized and grouped (just an example):
+
+    ```json
+    {
+      "boss": "example",
+      "curly": "example",
+      "eqeqeq": "example",
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
