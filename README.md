@@ -55,7 +55,7 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ## EditorConfig
 
- - [1.1](#1.1) <a name='1.1'></a> We chosen to use [EditorConfig](http://editorconfig.org/) to maintain our code consistency, you IDE should be compatible with this plugin. [Here](http://editorconfig.org/#download) is a list of available IDE's.
+ - [1.1](#1.1) <a name='1.1'></a> We chosen to use [EditorConfig](http://editorconfig.org/) to maintain our code consistency, your IDE should be compatible with this plugin. [Here](http://editorconfig.org/#download) is a list of available IDE's.
 
   > Let's keep a consistency in our projects, it should look like it was written by the same person 😏
 
