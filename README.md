@@ -36,19 +36,121 @@ As far as our projects are made by more than one person, we should find out a wa
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
-## Example topic
+## Variables
 
- - [00.0](#00.0)<a name='00.0'></a> some quick example description
+ - [1.1](#1.1) <a name='1.1'></a> Always use `var` to declare variables.
 
-  > Reason to use it like this
+  > Not doing so will result in global variables. We want to avoid polluting the global namespace.
 
-    ```javascript
-    // bad
-    // multiple examples of bad code
+```javascript
+// super bad
+superPower = new SuperPower();
 
-    // good
-    // multiple examples of good code
-    ```
+// super good
+var superPower = new SuperPower();
+```
+
+ - [1.2](#1.2) <a name='1.2'></a> Use one `var` declaration per context.
+
+```javascript
+// bad
+var items = getItems();
+var goSportsTeam = true;
+var dragonball = 'z';
+
+// bad
+var items = getItems(),
+  goSportsTeam = true,
+  dragonball = 'z';
+
+// good
+var items = getItems(),
+  goSportsTeam = true,
+  dragonball = 'z';
+```
+
+ - [1.3](#1.3) <a name='1.3'></a> Declare unassigned variables last.
+
+ > This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
+
+```javascript
+// bad
+var items = getItems(),
+  goSportsTeam = true,
+  emptyVar,
+  dragonball = 'z';
+
+// good
+var items = getItems(),
+  goSportsTeam = true,
+  dragonball = 'z',
+  emptyVar;
+```
+
+- [1.4](#1.4) <a name='1.4'></a> Assign variables at the top of their scope.
+
+> This helps avoid issues with variable declaration and assignment hoisting related issues.
+
+```javascript
+// bad
+function() {
+  test();
+  console.log('doing stuff..');
+
+  //..other stuff..
+
+  var name = getName();
+
+  if (name === 'test') {
+    return false;
+  }
+
+  return name;
+}
+
+// good
+function() {
+  var name = getName();
+
+  test();
+  console.log('doing stuff..');
+
+  //..other stuff..
+
+  if (name === 'test') {
+    return false;
+  }
+
+  return name;
+}
+
+// bad - unnessary function call
+function() {
+  var name = getName();
+
+  if (!arguments.length) {
+    return false;
+  }
+
+  this.setFirstName(name);
+
+  return true;
+}
+
+// good
+function() {
+  var name;
+
+  if (!arguments.length) {
+    return false;
+  }
+
+  name = getName();
+  this.setFirstName(name);
+
+  return true;
+}
+```
 
 
 - **[⬆ back to top](#topics)**
