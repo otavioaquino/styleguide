@@ -14,9 +14,9 @@ As far as our projects are made by more than one person, we should find out a wa
 * [EditorConfig](http://editorconfig.org/)
 * [Linting](http://contribute.jquery.org/style-guide/js/#linting)
 * [Types](https://github.com/airbnb/javascript#types)
-* [Objects](https://github.com/airbnb/javascript/tree/master/es5#objects)
+* [Objects](https://github.com/airbnb/javascript/tree/master/es5#objects) *missing*
 * [Arrays](https://github.com/airbnb/javascript#arrays)
-* [Strings](https://github.com/airbnb/javascript#strings)
+* [Strings](https://github.com/airbnb/javascript#strings) *missing*
 * [Functions](https://github.com/airbnb/javascript#functions)
 * [Properties](https://github.com/airbnb/javascript#properties)
 * [Variables](https://github.com/airbnb/javascript#variables)
@@ -36,6 +36,134 @@ As far as our projects are made by more than one person, we should find out a wa
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
+## EditorConfig
+
+ - [1.1](#1.1) <a name='1.1'></a> We chosen to use [EditorConfig](http://editorconfig.org/) to maintain our code consistency, your IDE should be compatible with this plugin.  [Here](http://editorconfig.org/#download) is a list of available IDE's.
+
+  > Let's keep a consistency in our projects, it should look like it was written by the same person 😏
+
+    ```bash
+    # http://editorconfig.org
+    root = true
+
+    [*]
+    indent_style = space
+    indent_size = 2
+    end_of_line = lf
+    charset = utf-8
+    trim_trailing_whitespace = true
+    insert_final_newline = true
+    ```
+
+    [Here](./.editorconfig) is our actual `.editorconfig` config file.
+
+- **[⬆ back to top](#topics)**
+
+## Linting
+
+  - Use JSHint to detect errors and potential problems. Every project should have a Grunt task for linting all JavaScript files: `grunt jshint`. The options for JSHint are stored in a `.jshintrc` file.
+
+  - All options must be alphabetized and grouped (just an example):
+
+    ```json
+    {
+      "boss": "example",
+      "curly": "example",
+      "eqeqeq": "example",
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Types
+
+  - **Primitives**: When you access a primitive type you work directly on its value.
+
+    + `string`
+    + `number`
+    + `boolean`
+    + `null`
+    + `undefined`
+
+    ```javascript
+    var foo = 1;
+    var bar = foo;
+
+    bar = 9;
+
+    console.log(foo, bar); // => 1, 9
+    ```
+  - **Complex**: When you access a complex type you work on a reference to its value.
+
+    + `object`
+    + `array`
+    + `function`
+
+    ```javascript
+    var foo = [1, 2];
+    var bar = foo;
+
+    bar[0] = 9;
+
+    console.log(foo[0], bar[0]); // => 9, 9
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Arrays
+
+ - [00.0](#00.0) <a name='00.0'></a> Use the literal syntax for array creation.
+
+  > Literal syntax can be way faster 💪
+
+    ```javascript
+    // bad
+    var items = new Array();
+
+    // good
+    var items = [];
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> Use Array#push instead of direct assignment to add items to an array.
+
+    ```javascript
+    var someStack = [];
+
+
+    // bad
+    someStack[someStack.length] = 'abracadabra';
+
+    // good
+    someStack.push('abracadabra');
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+
+    ```javascript
+    var len = items.length;
+    var itemsCopy = [];
+    var i;
+
+    // bad
+    for (i = 0; i < len; i++) {
+      itemsCopy[i] = items[i];
+    }
+
+    // good
+    itemsCopy = items.slice();
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> To convert an array-like object to an array, use Array#slice.
+
+    ```javascript
+    function trigger() {
+      var args = Array.prototype.slice.call(arguments);
+      ...
+    }
+    ```
+
+- **[⬆ back to top](#topics)**
+
 ## Chained Method Calls
 
  - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is bigger than one, there must be one call per line, with the first call on a separate line from the object the methods are called on.
@@ -43,21 +171,21 @@ As far as our projects are made by more than one person, we should find out a wa
 ```javascript
 // bad
 elements
-  .addClass( "foo" );
+  .addClass("foo");
 
 // good
-elements.addClass( "foo" );
+elements.addClass('foo');
 
 // bad
-elements.addClass( "foo" ).children().html( "hello" ).end().appendTo( "body" );
+elements.addClass('foo').children().html('hello').end().appendTo('body');
 
 // good
 elements
-  .addClass( "foo" )
+  .addClass('foo')
   .children()
-  .html( "hello" )
+  .html('hello')
   .end()
-  .appendTo( "body" );
+  .appendTo('body');
 ```
 
 ## Constructors
@@ -512,80 +640,6 @@ function() {
 
   **[⬆ back to top](#table-of-contents)**
 
-## Arrays
-
- - [00.0](#00.0) <a name='00.0'></a> Use the literal syntax for array creation.
-
-  > Literal syntax can be way faster 💪
-
-    ```javascript
-    // bad
-    var items = new Array();
-
-    // good
-    var items = [];
-    ```
-
-- [00.0](#00.0) <a name='00.0'></a> Use Array#push instead of direct assignment to add items to an array.
-
-    ```javascript
-    var someStack = [];
-
-
-    // bad
-    someStack[someStack.length] = 'abracadabra';
-
-    // good
-    someStack.push('abracadabra');
-    ```
-
-- [00.0](#00.0) <a name='00.0'></a> When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
-
-    ```javascript
-    var len = items.length;
-    var itemsCopy = [];
-    var i;
-
-    // bad
-    for (i = 0; i < len; i++) {
-      itemsCopy[i] = items[i];
-    }
-
-    // good
-    itemsCopy = items.slice();
-    ```
-
-- [00.0](#00.0) <a name='00.0'></a> To convert an array-like object to an array, use Array#slice.
-
-    ```javascript
-    function trigger() {
-      var args = Array.prototype.slice.call(arguments);
-      ...
-    }
-    ```
-
-## EditorConfig
-
- - [1.1](#1.1) <a name='1.1'></a> We chosen to use [EditorConfig](http://editorconfig.org/) to maintain our code consistency, your IDE should be compatible with this plugin. [Here](http://editorconfig.org/#download) is a list of available IDE's.
-
-  > Let's keep a consistency in our projects, it should look like it was written by the same person 😏
-
-    ```bash
-    # http://editorconfig.org
-    root = true
-
-    [*]
-    indent_style = space
-    indent_size = 2
-    end_of_line = lf
-    charset = utf-8
-    trim_trailing_whitespace = true
-    insert_final_newline = true
-    ```
-
-    [Here](./.editorconfig) is our actual `.editorconfig` config file.
-
-- **[⬆ back to top](#topics)**
 
 ## Hoisting
 
@@ -699,7 +753,7 @@ function() {
 
 ## Whitespace
 
- - [00.0](#00.0)<a name='00.0'></a>Use soft tabs set to 2 spaces.
+ - [00.0](#00.0)<a name='00.0'></a> Use soft tabs set to 2 spaces.
 
     ```javascript
     // bad
@@ -718,7 +772,7 @@ function() {
     }
     ```
 
- - [00.0](#00.0)<a name='00.0'></a>Place 1 space before the leading brace.
+ - [00.0](#00.0)<a name='00.0'></a> Place 1 space before the leading brace.
 
     ```javascript
     // bad
@@ -744,7 +798,7 @@ function() {
     });
     ```
 
- - [00.0](#00.0)<a name='00.0'></a>Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space before the argument list in function calls and declarations.
+ - [00.0](#00.0)<a name='00.0'></a> Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space before the argument list in function calls and declarations.
 
     ```javascript
     // bad
@@ -768,7 +822,7 @@ function() {
     }
     ```
 
- - [00.0](#00.0)<a name='00.0'></a>Set off operators with spaces.
+ - [00.0](#00.0)<a name='00.0'></a> Set off operators with spaces.
 
     ```javascript
     // bad
@@ -778,7 +832,7 @@ function() {
     var x = y + 5;
     ```
 
- - [00.0](#00.0)<a name='00.0'></a>End files with a single newline character.
+ - [00.0](#00.0)<a name='00.0'></a> End files with a single newline character.
 
     ```javascript
     // bad
@@ -802,7 +856,7 @@ function() {
     })(this);↵
     ```
 
- - [00.0](#00.0)<a name='00.0'></a>Leave a blank line after blocks and before the next statement
+ - [00.0](#00.0)<a name='00.0'></a> Leave a blank line after blocks and before the next statement
 
     ```javascript
     // bad
@@ -838,41 +892,6 @@ function() {
 
     return obj;
     ```
-
-## Types
-
-  - **Primitives**: When you access a primitive type you work directly on its value.
-
-    + `string`
-    + `number`
-    + `boolean`
-    + `null`
-    + `undefined`
-
-    ```javascript
-    var foo = 1;
-    var bar = foo;
-
-    bar = 9;
-
-    console.log(foo, bar); // => 1, 9
-    ```
-  - **Complex**: When you access a complex type you work on a reference to its value.
-
-    + `object`
-    + `array`
-    + `function`
-
-    ```javascript
-    var foo = [1, 2];
-    var bar = foo;
-
-    bar[0] = 9;
-
-    console.log(foo[0], bar[0]); // => 9, 9
-    ```
-
-**[⬆ back to top](#table-of-contents)**
 
 ## Type Casting & Coercion
 
@@ -1027,22 +1046,6 @@ function() {
       'Batman',
       'Superman',
     ];
-    ```
-
-**[⬆ back to top](#table-of-contents)**
-
-## Linting
-
-  - Use JSHint to detect errors and potential problems. Every project should have a Grunt task for linting all JavaScript files: `grunt jshint`. The options for JSHint are stored in a `.jshintrc` file.
-
-  - All options must be alphabetized and grouped (just an example):
-
-    ```json
-    {
-      "boss": "example",
-      "curly": "example",
-      "eqeqeq": "example",
-    }
     ```
 
 **[⬆ back to top](#table-of-contents)**
