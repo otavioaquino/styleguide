@@ -260,3 +260,52 @@ As far as our projects are made by more than one person, we should find out a wa
     ```
 
 **[⬆ back to top](#table-of-contents)**
+
+## Blocks
+
+  - Use braces with all blocks.
+
+    ```javascript
+    // bad
+    if (test)
+      return false;
+
+    // bad
+    if (test) return false;
+
+    // good
+    if (test) {
+      return false;
+    }
+
+    // good
+    function() { return false; }
+
+    // good
+    function() {
+      return false;
+    }
+    ```
+
+  - If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace.
+
+    ```javascript
+    // bad
+    if (test) {
+      thing1();
+      thing2();
+    }
+    else {
+      thing3();
+    }
+
+    // good
+    if (test) {
+      thing1();
+      thing2();
+    } else {
+      thing3();
+    }
+    ```
+
+**[⬆ back to top](#table-of-contents)**
