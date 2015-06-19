@@ -73,7 +73,7 @@ As far as our projects are made by more than one person, we should find out a wa
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Types
 
@@ -108,7 +108,7 @@ As far as our projects are made by more than one person, we should find out a wa
     console.log(foo[0], bar[0]); // => 9, 9
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Arrays
 
@@ -365,7 +365,7 @@ function() {
 }
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Hoisting
 
@@ -453,7 +453,7 @@ function() {
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Blocks
 
@@ -502,7 +502,7 @@ function() {
     }
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Whitespace
 
@@ -646,7 +646,7 @@ function() {
     return obj;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Commas
 
@@ -727,7 +727,7 @@ function() {
     ];
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Type Casting & Coercion
 
@@ -803,7 +803,7 @@ function() {
     var hasAge = !!age;
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Naming Conventions
 
@@ -905,7 +905,7 @@ var CheckBox = require('./CheckBox');
 var CheckBox = require('./check-box');
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Accessors
 
@@ -959,7 +959,7 @@ var CheckBox = require('./check-box');
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 ## Constructors
 
@@ -1047,7 +1047,7 @@ yo.jump()
   .setHeight(20);
 ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 
 ## DOM Events
@@ -1096,7 +1096,7 @@ yo.jump()
     };
     ```
 
-**[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#topics)**
 
 
 ## Chained Method Calls
