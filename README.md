@@ -57,7 +57,7 @@ As far as our projects are made by more than one person, we should find out a wa
 
     [Here](./.editorconfig) is our actual `.editorconfig` config file.
 
-- **[⬆ back to top](#topics)**
+**[⬆ back to top](#topics)**
 
 ## Linting
 
@@ -162,7 +162,7 @@ As far as our projects are made by more than one person, we should find out a wa
     }
     ```
 
-- **[⬆ back to top](#topics)**
+**[⬆ back to top](#topics)**
 
 ## Functions
 
@@ -205,7 +205,7 @@ function yup(name, options, args) {
 }
 ```
 
-- **[⬆ back to top](#topics)**
+**[⬆ back to top](#topics)**
 
 ## Properties
 
@@ -247,7 +247,7 @@ function yup(name, options, args) {
   config['class']; // 'bar'
   ```
 
-- **[⬆ back to top](#topics)**
+**[⬆ back to top](#topics)**
 
 ## Variables
 
@@ -365,7 +365,7 @@ function() {
 }
 ```
 
-  **[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents)**
 
 ## Hoisting
 
@@ -453,7 +453,7 @@ function() {
     }
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents)**
 
 ## Blocks
 
@@ -501,7 +501,8 @@ function() {
       thing3();
     }
     ```
- **[⬆ back to top](#table-of-contents)**
+
+**[⬆ back to top](#table-of-contents)**
 
 ## Whitespace
 
@@ -644,6 +645,7 @@ function() {
 
     return obj;
     ```
+
 **[⬆ back to top](#table-of-contents)**
 
 ## Commas
@@ -1094,7 +1096,7 @@ yo.jump()
     };
     ```
 
-  **[⬆ back to top](#table-of-contents)**
+**[⬆ back to top](#table-of-contents)**
 
 
 ## Chained Method Calls
