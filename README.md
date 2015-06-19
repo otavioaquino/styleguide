@@ -36,6 +36,29 @@ As far as our projects are made by more than one person, we should find out a wa
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
+## Chained Method Calls
+
+ - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is bigger than one, there must be one call per line, with the first call on a separate line from the object the methods are called on.
+
+```javascript
+// bad
+elements
+  .addClass( "foo" );
+
+// good
+elements.addClass( "foo" );
+
+// bad
+elements.addClass( "foo" ).children().html( "hello" ).end().appendTo( "body" );
+
+// good
+elements
+  .addClass( "foo" )
+  .children()
+  .html( "hello" )
+  .end()
+  .appendTo( "body" );
+```
 
 ## Constructors
 
