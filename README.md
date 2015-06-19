@@ -1142,5 +1142,32 @@ switch (event.keyCode) {
 }
 ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
+## Semicolons
 
+  - **Yup.**
+
+    ```javascript
+    // bad
+    (function() {
+      var name = 'Skywalker'
+      return name
+    })()
+
+    // good
+    (function() {
+      var name = 'Skywalker';
+      return name;
+    })();
+
+    // good (guards against the function becoming an argument when two files with IIFEs are concatenated)
+    ;(function() {
+      var name = 'Skywalker';
+      return name;
+    })();
+    ```
+
+    [Read more](http://stackoverflow.com/a/7365214/1712802).
+
+**[⬆ back to top](#table-of-contents)**
+
+  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
