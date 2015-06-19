@@ -123,6 +123,25 @@ yo.jump()
   .setHeight(20);
 ```
 
+
+## Switch Statements
+
+ - [1.1](#1.1) <a name='1.1'></a> The usage of switch statements is generally discouraged, but can be useful when there are a large number of cases.
+
+```javascript
+// good
+switch (event.keyCode) {
+  case 1:
+    x();
+    break;
+  case 2:
+    y();
+    break;
+  default:
+    z();
+}
+```
+
 ## Naming Conventions
 
  - [1.1](#1.1) <a name='1.1'></a> Avoid single letter names.
