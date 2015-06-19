@@ -152,8 +152,147 @@ function() {
 }
 ```
 
+## Properties
+
+  - Use dot notation to access properties.
+
+  > Dot notation is simpler and enforces `camelCase` when naming object keys.
+
+  ```javascript
+  var user = {
+    name: 'John',
+    age: 42
+  };
+
+  // Bad
+  var userName = user['name'];
+
+  // Good
+  var userAge = user.age;
+  ```
+
+  - Use subscript notation `[]` to access dynamic properties or properties that are also JavaScript reserved words.
+
+  > Subscript notation is sometimes tricky and should be used only when really needed.
+
+  ```javascript
+  var config = {
+    id: 'foo',
+    'class': 'bar'
+  };
+
+  function getConfigData(data) {
+    return config[data];
+  }
+
+  // Accessing dynamic data
+  getConfigData('id'); // 'foo'
+
+  // Accessing a key that is also a JavaScript reserved word
+  config['class']; // 'bar'
+  ```
 
 - **[⬆ back to top](#topics)**
+
+## DOM Events
+
+ - When attaching dom events (such as click, hover, etc) use the `on` approach and never use `event/alias`
+
+    ```js
+    // bad
+    $el.click(this.onClick);
+
+    // good
+    $el.on('click', this.onClick);
+    ```
+ - After attach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
+
+    ```js
+    // bad
+    $el.on('click', this.myMotherFuckingCustomEventThatWillReturnTrue);
+
+    // good
+    $el.on('click', this.onClick);
+    $el.on('hover', this.onHover);
+    $el.on('mouseleave', this.onMouseLeave);
+    ```
+ - Prefer to use a method named `bind` to create any event attachment of your needs.
+
+    ```js
+    // bad
+    function Awesome() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    }
+
+    // good
+    function Awesome() {
+      this.bind();
+    }
+
+    Awesome.prototype.bind = function() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    };
+    ```
+
+  **[⬆ back to top](#table-of-contents)**
+
+## Arrays
+
+ - [00.0](#00.0) <a name='00.0'></a> Use the literal syntax for array creation.
+
+  > Literal syntax can be way faster 💪
+
+    ```javascript
+    // bad
+    var items = new Array();
+
+    // good
+    var items = [];
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> Use Array#push instead of direct assignment to add items to an array.
+
+    ```javascript
+    var someStack = [];
+
+
+    // bad
+    someStack[someStack.length] = 'abracadabra';
+
+    // good
+    someStack.push('abracadabra');
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+
+    ```javascript
+    var len = items.length;
+    var itemsCopy = [];
+    var i;
+
+    // bad
+    for (i = 0; i < len; i++) {
+      itemsCopy[i] = items[i];
+    }
+
+    // good
+    itemsCopy = items.slice();
+    ```
+
+- [00.0](#00.0) <a name='00.0'></a> To convert an array-like object to an array, use Array#slice.
+
+    ```javascript
+    function trigger() {
+      var args = Array.prototype.slice.call(arguments);
+      ...
+    }
+    ```
 
 ## EditorConfig
 
