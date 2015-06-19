@@ -57,18 +57,9 @@
 
     ```json
     {
-      "boss": true,
-      "curly": true,
-      "eqeqeq": true,
-      "eqnull": true,
-      "expr": true,
-      "immed": true,
-      "noarg": true,
-      "quotmark": "double",
-      "smarttabs": true,
-      "trailing": true,
-      "undef": true,
-      "unused": true
+      "boss": "example",
+      "curly": "example",
+      "eqeqeq": "example",
     }
     ```
 
