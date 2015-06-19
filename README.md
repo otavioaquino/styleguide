@@ -21,18 +21,18 @@ As far as our projects are made by more than one person, we should find out a wa
 * [Properties](https://github.com/airbnb/javascript#properties)
 * [Variables](https://github.com/airbnb/javascript#variables)
 * [Hoisting](https://github.com/airbnb/javascript#hoisting)
-* [Comparison Operators & Equality](https://github.com/airbnb/javascript#comparison-operators--equality)
+* [Comparison Operators & Equality](https://github.com/airbnb/javascript#comparison-operators--equality) *missing*
 * [Blocks](https://github.com/airbnb/javascript#blocks)
-* [Comments](https://github.com/airbnb/javascript#comments)
+* [Comments](https://github.com/airbnb/javascript#comments) *missing*
 * [Whitespace](https://github.com/airbnb/javascript#whitespace)
 * [Commas](https://github.com/airbnb/javascript#commas)
-* [Semicolons](https://github.com/airbnb/javascript#semicolons)
+* [Semicolons](https://github.com/airbnb/javascript#semicolons) *missing*
 * [Type Casting & Coercion](https://github.com/airbnb/javascript#type-casting--coercion)
 * [Naming Conventions](https://github.com/airbnb/javascript#naming-conventions)
 * [Accessors](https://github.com/airbnb/javascript#accessors)
 * [Constructors](https://github.com/airbnb/javascript#constructors)
-* [Events](https://github.com/airbnb/javascript#events)
-* [jQuery](https://github.com/airbnb/javascript#jquery)
+* [DOM Events](https://github.com/airbnb/javascript#events)
+* [jQuery](https://github.com/airbnb/javascript#jquery) *missing*
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
@@ -164,235 +164,6 @@ As far as our projects are made by more than one person, we should find out a wa
 
 - **[⬆ back to top](#topics)**
 
-## Chained Method Calls
-
- - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is bigger than one, there must be one call per line, with the first call on a separate line from the object the methods are called on.
-
-```javascript
-// bad
-elements
-  .addClass("foo");
-
-// good
-elements.addClass('foo');
-
-// bad
-elements.addClass('foo').children().html('hello').end().appendTo('body');
-
-// good
-elements
-  .addClass('foo')
-  .children()
-  .html('hello')
-  .end()
-  .appendTo('body');
-```
-
-## Constructors
-
- - [1.1](#1.1) <a name='1.1'></a> Use capital letter when creating a Constructor function.
-  > It makes easier to indentify Contructors and common functions
-
-```javascript
-// bad
-function gang() {
-
-}
-
-// bad
-function GANG() {
-
-}
-
-// good
-function Gang() {
-
-}
-```
-
- - [1.2](#1.2) <a name='1.2'></a> Assign methods to the prototype object, instead of overwriting the prototype with a new object.
- > Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
-
-```javascript
-function Gang() {
-
-}
-
-// bad
-Gang.prototype = {
-  fight: function fight() {
-    console.log('fighting');
-  },
-
-  block: function block() {
-    console.log('blocking');
-  }
-};
-
-// good
-Gang.prototype.fight = function fight() {
-  console.log('fighting');
-};
-
-Gang.prototype.block = function block() {
-  console.log('blocking');
-};
-```
-
-- [1.3](#1.3) <a name='1.3'></a> Methods can return `this`.
- > Returning `this` helps method chaining. But it's not mandatory to do it.
-
-```javascript
-// bad
-Gang.prototype.jump = function() {
-  this.jumping = true;
-  return true;
-};
-
-Gang.prototype.setHeight = function(height) {
-  this.height = height;
-};
-
-var yo = new Gang();
-yo.jump(); // => true
-yo.setHeight(20); // => undefined
-
-// good
-Gang.prototype.jump = function() {
-  this.jumping = true;
-  return this;
-};
-
-Gang.prototype.setHeight = function(height) {
-  this.height = height;
-  return this;
-};
-
-var yo = new Gang();
-
-yo.jump()
-  .setHeight(20);
-```
-
-
-## Switch Statements
-
- - [1.1](#1.1) <a name='1.1'></a> The usage of switch statements is generally discouraged, but can be useful when there are a large number of cases.
-
-```javascript
-// good
-switch (event.keyCode) {
-  case 1:
-    x();
-    break;
-  case 2:
-    y();
-    break;
-  default:
-    z();
-}
-```
-
-## Naming Conventions
-
- - [1.1](#1.1) <a name='1.1'></a> Avoid single letter names.
-
-  > Developers don't have crystal balls, be descriptive with your naming.
-
-```javascript
-// awful
-function q() {
-  // ...stuff...
-}
-
-// good
-function query() {
-  // ..stuff..
-}
-```
-
- - [1.2](#1.2) <a name='1.2'></a> Use camelCase when naming objects, functions, and instances.
-
- ```javascript
-// awful
-function q() {
-  // ...stuff...
-}
-
-// good
-// bad
-var OBJEcttsssss = {};
-var this_is_my_object = {};
-var o = {};
-function c() {}
-
-// good
-var thisIsMyObject = {};
-function thisIsMyFunction() {}
-```
-
- - [1.3](#1.3) <a name='1.3'></a> Use PascalCase when naming constructors or classes.
-
-```javascript
-// bad
-function user(options) {
-  this.name = options.name;
-}
-
-var bad = new user({
-  name: 'nope'
-});
-
-// good
-function User(options) {
-  this.name = options.name;
-}
-
-var good = new User({
-  name: 'yup'
-});
-```
-
- - Name your functions.
-
- > This is helpful for stack traces.
-
-```javascript
-// bad
-var log = function(msg) {
-  console.log(msg);
-};
-
-// good
-var log = function log(msg) {
-  console.log(msg);
-};
-```
-
- - Your files should be the name of the main module you are exporting, but kebab-case.
-
-```javascript
-// file contents
-function CheckBox() {
-  // code
-}
-
-module.exports = CheckBox;
-
-// in some other file
-// bad
-var CheckBox = require('./checkBox');
-
-// bad
-var CheckBox = require('./check_box');
-
-// bad
-var CheckBox = require('./CheckBox');
-
-// good
-var CheckBox = require('./check-box');
-```
-
 ## Functions
 
  - [1.1](#1.1) <a name='1.1'></a> Prefer to use named function expression instead of anonymous function expression
@@ -433,6 +204,50 @@ function yup(name, options, args) {
   // ...stuff...
 }
 ```
+
+- **[⬆ back to top](#topics)**
+
+## Properties
+
+  - Use dot notation to access properties.
+
+  > Dot notation is simpler and enforces `camelCase` when naming object keys.
+
+  ```javascript
+  var user = {
+    name: 'John',
+    age: 42
+  };
+
+  // Bad
+  var userName = user['name'];
+
+  // Good
+  var userAge = user.age;
+  ```
+
+  - Use subscript notation `[]` to access dynamic properties or properties that are also JavaScript reserved words.
+
+  > Subscript notation is sometimes tricky and should be used only when really needed.
+
+  ```javascript
+  var config = {
+    id: 'foo',
+    'class': 'bar'
+  };
+
+  function getConfigData(data) {
+    return config[data];
+  }
+
+  // Accessing dynamic data
+  getConfigData('id'); // 'foo'
+
+  // Accessing a key that is also a JavaScript reserved word
+  config['class']; // 'bar'
+  ```
+
+- **[⬆ back to top](#topics)**
 
 ## Variables
 
@@ -550,96 +365,7 @@ function() {
 }
 ```
 
-## Properties
-
-  - Use dot notation to access properties.
-
-  > Dot notation is simpler and enforces `camelCase` when naming object keys.
-
-  ```javascript
-  var user = {
-    name: 'John',
-    age: 42
-  };
-
-  // Bad
-  var userName = user['name'];
-
-  // Good
-  var userAge = user.age;
-  ```
-
-  - Use subscript notation `[]` to access dynamic properties or properties that are also JavaScript reserved words.
-
-  > Subscript notation is sometimes tricky and should be used only when really needed.
-
-  ```javascript
-  var config = {
-    id: 'foo',
-    'class': 'bar'
-  };
-
-  function getConfigData(data) {
-    return config[data];
-  }
-
-  // Accessing dynamic data
-  getConfigData('id'); // 'foo'
-
-  // Accessing a key that is also a JavaScript reserved word
-  config['class']; // 'bar'
-  ```
-
-- **[⬆ back to top](#topics)**
-
-## DOM Events
-
- - When attaching dom events (such as click, hover, etc) use the `on` approach and never use `event/alias`
-
-    ```js
-    // bad
-    $el.click(this.onClick);
-
-    // good
-    $el.on('click', this.onClick);
-    ```
- - After attach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
-
-    ```js
-    // bad
-    $el.on('click', this.myMotherFuckingCustomEventThatWillReturnTrue);
-
-    // good
-    $el.on('click', this.onClick);
-    $el.on('hover', this.onHover);
-    $el.on('mouseleave', this.onMouseLeave);
-    ```
- - Prefer to use a method named `bind` to create any event attachment of your needs.
-
-    ```js
-    // bad
-    function Awesome() {
-      this.$el.on('click', this.onClick);
-      this.$foo.on('click', this.onFooClick);
-      this.$bar.on('click', this.onBarClick);
-      this.$lol.on('click', this.onLolClick);
-    }
-
-    // good
-    function Awesome() {
-      this.bind();
-    }
-
-    Awesome.prototype.bind = function() {
-      this.$el.on('click', this.onClick);
-      this.$foo.on('click', this.onFooClick);
-      this.$bar.on('click', this.onBarClick);
-      this.$lol.on('click', this.onLolClick);
-    };
-    ```
-
   **[⬆ back to top](#table-of-contents)**
-
 
 ## Hoisting
 
@@ -727,29 +453,55 @@ function() {
     }
     ```
 
-### Example
+  **[⬆ back to top](#table-of-contents)**
 
-  ```javascript
-  // bad
-  function example() {
-    lol(); // => YOLO
+## Blocks
 
-    function lol() {
-      console.log('YOLO');
+  - Use braces with all blocks.
+
+    ```javascript
+    // bad
+    if (test)
+      return false;
+
+    // bad
+    if (test) return false;
+
+    // good
+    if (test) {
+      return false;
     }
-  }
 
-  // good
-  function lol() {
-    console.log('YOLO');
-  }
+    // good
+    function() { return false; }
 
-  function example() {
-    lol(); // => YOLO
-  }
-  ```
+    // good
+    function() {
+      return false;
+    }
+    ```
 
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
+  - If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace.
+
+    ```javascript
+    // bad
+    if (test) {
+      thing1();
+      thing2();
+    }
+    else {
+      thing3();
+    }
+
+    // good
+    if (test) {
+      thing1();
+      thing2();
+    } else {
+      thing3();
+    }
+    ```
+ **[⬆ back to top](#table-of-contents)**
 
 ## Whitespace
 
@@ -892,81 +644,6 @@ function() {
 
     return obj;
     ```
-
-## Type Casting & Coercion
-
-  - Perform type coercion at the beginning of the statement.
-  - Strings:
-
-    ```javascript
-    //  => this.reviewScore = 9;
-
-    // bad
-    var totalScore = this.reviewScore + '';
-
-    // good
-    var totalScore = String(this.reviewScore);
-    ```
-
-  - Use `parseInt` for Numbers and always with a radix for type casting.
-
-    ```javascript
-    var inputValue = '4';
-
-    // bad
-    var val = new Number(inputValue);
-
-    // bad
-    var val = +inputValue;
-
-    // bad
-    var val = inputValue >> 0;
-
-    // bad
-    var val = parseInt(inputValue);
-
-    // good
-    var val = Number(inputValue);
-
-    // good
-    var val = parseInt(inputValue, 10);
-    ```
-
-  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
-
-    ```javascript
-    // good
-    /**
-     * parseInt was the reason my code was slow.
-     * Bitshifting the String to coerce it to a
-     * Number made it a lot faster.
-     */
-    var val = inputValue >> 0;
-    ```
-
-  - **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
-
-    ```javascript
-    2147483647 >> 0 //=> 2147483647
-    2147483648 >> 0 //=> -2147483648
-    2147483649 >> 0 //=> -2147483647
-    ```
-
-  - Booleans:
-
-    ```javascript
-    var age = 0;
-
-    // bad
-    var hasAge = new Boolean(age);
-
-    // good
-    var hasAge = Boolean(age);
-
-    // good
-    var hasAge = !!age;
-    ```
-
 **[⬆ back to top](#table-of-contents)**
 
 ## Commas
@@ -1050,52 +727,183 @@ function() {
 
 **[⬆ back to top](#table-of-contents)**
 
-## Blocks
+## Type Casting & Coercion
 
-  - Use braces with all blocks.
-
-    ```javascript
-    // bad
-    if (test)
-      return false;
-
-    // bad
-    if (test) return false;
-
-    // good
-    if (test) {
-      return false;
-    }
-
-    // good
-    function() { return false; }
-
-    // good
-    function() {
-      return false;
-    }
-    ```
-
-  - If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace.
+  - Perform type coercion at the beginning of the statement.
+  - Strings:
 
     ```javascript
+    //  => this.reviewScore = 9;
+
     // bad
-    if (test) {
-      thing1();
-      thing2();
-    }
-    else {
-      thing3();
-    }
+    var totalScore = this.reviewScore + '';
 
     // good
-    if (test) {
-      thing1();
-      thing2();
-    } else {
-      thing3();
-    }
+    var totalScore = String(this.reviewScore);
     ```
+
+  - Use `parseInt` for Numbers and always with a radix for type casting.
+
+    ```javascript
+    var inputValue = '4';
+
+    // bad
+    var val = new Number(inputValue);
+
+    // bad
+    var val = +inputValue;
+
+    // bad
+    var val = inputValue >> 0;
+
+    // bad
+    var val = parseInt(inputValue);
+
+    // good
+    var val = Number(inputValue);
+
+    // good
+    var val = parseInt(inputValue, 10);
+    ```
+
+  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+
+    ```javascript
+    // good
+    /**
+     * parseInt was the reason my code was slow.
+     * Bitshifting the String to coerce it to a
+     * Number made it a lot faster.
+     */
+    var val = inputValue >> 0;
+    ```
+
+  - **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
+
+    ```javascript
+    2147483647 >> 0 //=> 2147483647
+    2147483648 >> 0 //=> -2147483648
+    2147483649 >> 0 //=> -2147483647
+    ```
+
+  - Booleans:
+
+    ```javascript
+    var age = 0;
+
+    // bad
+    var hasAge = new Boolean(age);
+
+    // good
+    var hasAge = Boolean(age);
+
+    // good
+    var hasAge = !!age;
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
+## Naming Conventions
+
+ - [1.1](#1.1) <a name='1.1'></a> Avoid single letter names.
+
+  > Developers don't have crystal balls, be descriptive with your naming.
+
+```javascript
+// awful
+function q() {
+  // ...stuff...
+}
+
+// good
+function query() {
+  // ..stuff..
+}
+```
+
+ - [1.2](#1.2) <a name='1.2'></a> Use camelCase when naming objects, functions, and instances.
+
+ ```javascript
+// awful
+function q() {
+  // ...stuff...
+}
+
+// good
+// bad
+var OBJEcttsssss = {};
+var this_is_my_object = {};
+var o = {};
+function c() {}
+
+// good
+var thisIsMyObject = {};
+function thisIsMyFunction() {}
+```
+
+ - [1.3](#1.3) <a name='1.3'></a> Use PascalCase when naming constructors or classes.
+
+```javascript
+// bad
+function user(options) {
+  this.name = options.name;
+}
+
+var bad = new user({
+  name: 'nope'
+});
+
+// good
+function User(options) {
+  this.name = options.name;
+}
+
+var good = new User({
+  name: 'yup'
+});
+```
+
+ - Name your functions.
+
+ > This is helpful for stack traces.
+
+```javascript
+// bad
+var log = function(msg) {
+  console.log(msg);
+};
+
+// good
+var log = function log(msg) {
+  console.log(msg);
+};
+```
+
+ - Your files should be the name of the main module you are exporting, but kebab-case.
+
+```javascript
+// file contents
+function CheckBox() {
+  // code
+}
+
+module.exports = CheckBox;
+
+// in some other file
+// bad
+var CheckBox = require('./checkBox');
+
+// bad
+var CheckBox = require('./check_box');
+
+// bad
+var CheckBox = require('./CheckBox');
+
+// good
+var CheckBox = require('./check-box');
+```
+
+**[⬆ back to top](#table-of-contents)**
 
 ## Accessors
 
@@ -1150,3 +958,187 @@ function() {
     ```
 
 **[⬆ back to top](#table-of-contents)**
+
+## Constructors
+
+ - [1.1](#1.1) <a name='1.1'></a> Use capital letter when creating a Constructor function.
+  > It makes easier to indentify Contructors and common functions
+
+```javascript
+// bad
+function gang() {
+
+}
+
+// bad
+function GANG() {
+
+}
+
+// good
+function Gang() {
+
+}
+```
+
+ - [1.2](#1.2) <a name='1.2'></a> Assign methods to the prototype object, instead of overwriting the prototype with a new object.
+ > Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
+
+```javascript
+function Gang() {
+
+}
+
+// bad
+Gang.prototype = {
+  fight: function fight() {
+    console.log('fighting');
+  },
+
+  block: function block() {
+    console.log('blocking');
+  }
+};
+
+// good
+Gang.prototype.fight = function fight() {
+  console.log('fighting');
+};
+
+Gang.prototype.block = function block() {
+  console.log('blocking');
+};
+```
+
+- [1.3](#1.3) <a name='1.3'></a> Methods can return `this`.
+ > Returning `this` helps method chaining. But it's not mandatory to do it.
+
+```javascript
+// bad
+Gang.prototype.jump = function() {
+  this.jumping = true;
+  return true;
+};
+
+Gang.prototype.setHeight = function(height) {
+  this.height = height;
+};
+
+var yo = new Gang();
+yo.jump(); // => true
+yo.setHeight(20); // => undefined
+
+// good
+Gang.prototype.jump = function() {
+  this.jumping = true;
+  return this;
+};
+
+Gang.prototype.setHeight = function(height) {
+  this.height = height;
+  return this;
+};
+
+var yo = new Gang();
+
+yo.jump()
+  .setHeight(20);
+```
+
+**[⬆ back to top](#table-of-contents)**
+
+
+## DOM Events
+
+ - When attaching dom events (such as click, hover, etc) use the `on` approach and never use `event/alias`
+
+    ```js
+    // bad
+    $el.click(this.onClick);
+
+    // good
+    $el.on('click', this.onClick);
+    ```
+ - After attach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
+
+    ```js
+    // bad
+    $el.on('click', this.myMotherFuckingCustomEventThatWillReturnTrue);
+
+    // good
+    $el.on('click', this.onClick);
+    $el.on('hover', this.onHover);
+    $el.on('mouseleave', this.onMouseLeave);
+    ```
+ - Prefer to use a method named `bind` to create any event attachment of your needs.
+
+    ```js
+    // bad
+    function Awesome() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    }
+
+    // good
+    function Awesome() {
+      this.bind();
+    }
+
+    Awesome.prototype.bind = function() {
+      this.$el.on('click', this.onClick);
+      this.$foo.on('click', this.onFooClick);
+      this.$bar.on('click', this.onBarClick);
+      this.$lol.on('click', this.onLolClick);
+    };
+    ```
+
+  **[⬆ back to top](#table-of-contents)**
+
+
+## Chained Method Calls
+
+ - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is bigger than one, there must be one call per line, with the first call on a separate line from the object the methods are called on.
+
+```javascript
+// bad
+elements
+  .addClass("foo");
+
+// good
+elements.addClass('foo');
+
+// bad
+elements.addClass('foo').children().html('hello').end().appendTo('body');
+
+// good
+elements
+  .addClass('foo')
+  .children()
+  .html('hello')
+  .end()
+  .appendTo('body');
+```
+
+
+## Switch Statements
+
+ - [1.1](#1.1) <a name='1.1'></a> The usage of switch statements is generally discouraged, but can be useful when there are a large number of cases.
+
+```javascript
+// good
+switch (event.keyCode) {
+  case 1:
+    x();
+    break;
+  case 2:
+    y();
+    break;
+  default:
+    z();
+}
+```
+
+  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
+
