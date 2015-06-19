@@ -136,6 +136,47 @@ var CheckBox = require('./CheckBox');
 var CheckBox = require('./check-box');
 ```
 
+## Functions
+
+ - [1.1](#1.1) <a name='1.1'></a> Prefer to use named function expression instead of anonymous function expression
+
+  > This helps you to debug your code, since the dev tools will show the name of the context which the error ocurred.
+
+```javascript
+// bad
+var anonymous = function() {}
+
+// good
+var named = function named() {}
+```
+
+ - [1.2](#1.2) <a name='1.2'></a> Never declare a function in a non-function block.
+
+```javascript
+// bad
+while(true) {
+  function test() {
+    return false;
+  }
+}
+```
+
+ - [1.3](#1.3) <a name='1.3'></a> Never name a parameter `arguments`.
+
+  > This will take precedence over the `arguments` object that is given to every function scope.
+
+```javascript
+// bad
+function nope(name, options, arguments) {
+  // ...stuff...
+}
+
+// good
+function yup(name, options, args) {
+  // ...stuff...
+}
+```
+
 ## Variables
 
  - [1.1](#1.1) <a name='1.1'></a> Always use `var` to declare variables.
@@ -414,7 +455,6 @@ function() {
     ```
 
     [Here](./.editorconfig) is our actual `.editorconfig` config file.
-
 
 - **[⬆ back to top](#topics)**
 
