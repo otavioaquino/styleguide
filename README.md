@@ -32,7 +32,7 @@ As far as our projects are made by more than one person, we should find out a wa
 * [Accessors](https://github.com/airbnb/javascript#accessors)
 * [Constructors](https://github.com/airbnb/javascript#constructors)
 * [DOM Events](https://github.com/airbnb/javascript#events)
-* [jQuery](https://github.com/airbnb/javascript#jquery) *missing*
+* [jQuery](https://github.com/airbnb/javascript#jquery)
 * [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
 * [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
