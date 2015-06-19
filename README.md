@@ -241,5 +241,6 @@ As far as our projects are made by more than one person, we should find out a wa
       'Batman',
       'Superman',
     ];
+    ```
 
 **[⬆ back to top](#table-of-contents)**
