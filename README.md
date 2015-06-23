@@ -11,30 +11,30 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ### Topics
 
-* [EditorConfig](http://editorconfig.org/)
-* [Linting](http://contribute.jquery.org/style-guide/js/#linting)
-* [Types](https://github.com/airbnb/javascript#types)
-* [Objects](https://github.com/airbnb/javascript/tree/master/es5#objects) *missing*
-* [Arrays](https://github.com/airbnb/javascript#arrays)
-* [Strings](https://github.com/airbnb/javascript#strings) *missing*
-* [Functions](https://github.com/airbnb/javascript#functions)
-* [Properties](https://github.com/airbnb/javascript#properties)
-* [Variables](https://github.com/airbnb/javascript#variables)
-* [Hoisting](https://github.com/airbnb/javascript#hoisting)
-* [Comparison Operators & Equality](https://github.com/airbnb/javascript#comparison-operators--equality) *missing*
-* [Blocks](https://github.com/airbnb/javascript#blocks)
-* [Comments](https://github.com/airbnb/javascript#comments) *missing*
-* [Whitespace](https://github.com/airbnb/javascript#whitespace)
-* [Commas](https://github.com/airbnb/javascript#commas)
-* [Semicolons](https://github.com/airbnb/javascript#semicolons) *missing*
-* [Type Casting & Coercion](https://github.com/airbnb/javascript#type-casting--coercion)
-* [Naming Conventions](https://github.com/airbnb/javascript#naming-conventions)
-* [Accessors](https://github.com/airbnb/javascript#accessors)
-* [Constructors](https://github.com/airbnb/javascript#constructors)
-* [DOM Events](https://github.com/airbnb/javascript#events)
-* [jQuery](https://github.com/airbnb/javascript#jquery) *missing*
-* [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
-* [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
+* [EditorConfig](#editorconfig)
+* [Linting](#linting)
+* [Types](#types)
+* [Objects](#objects) *missing*
+* [Arrays](#arrays)
+* [Strings](#strings) *missing*
+* [Functions](#functions)
+* [Properties](#properties)
+* [Variables](#variables)
+* [Hoisting](#hoisting)
+* [Comparison Operators & Equality](#comparison-operators--equality) *missing*
+* [Blocks](#blocks)
+* [Comments](#comments) *missing*
+* [Whitespace](#whitespace)
+* [Commas](#commas)
+* [Semicolons](#semicolons) *missing*
+* [Type Casting & Coercion](#type-casting--coercion)
+* [Naming Conventions](#naming-conventions)
+* [Accessors](#accessors)
+* [Constructors](#constructors)
+* [DOM Events](#dom-events)
+* [jQuery](#jquery) *missing*
+* [Chained Method Calls](#chained-method-calls)
+* [Switch statements](#switch-statements)
 
 ## EditorConfig
 
@@ -110,6 +110,8 @@ As far as our projects are made by more than one person, we should find out a wa
 
 **[⬆ back to top](#topics)**
 
+## Objects
+
 ## Arrays
 
  - [00.0](#00.0) <a name='00.0'></a> Use the literal syntax for array creation.
@@ -163,6 +165,8 @@ As far as our projects are made by more than one person, we should find out a wa
     ```
 
 **[⬆ back to top](#topics)**
+
+## Strings
 
 ## Functions
 
@@ -455,6 +459,8 @@ function() {
 
 **[⬆ back to top](#topics)**
 
+## Comparison Operators & Equality
+
 ## Blocks
 
   - Use braces with all blocks.
@@ -503,6 +509,8 @@ function() {
     ```
 
 **[⬆ back to top](#topics)**
+
+## Comments
 
 ## Whitespace
 
@@ -728,6 +736,8 @@ function() {
     ```
 
 **[⬆ back to top](#topics)**
+
+## Semicolons
 
 ## Type Casting & Coercion
 
@@ -1098,6 +1108,7 @@ yo.jump()
 
 **[⬆ back to top](#topics)**
 
+## jQuery
 
 ## Chained Method Calls
 
