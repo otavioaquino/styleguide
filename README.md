@@ -61,9 +61,9 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ## Linting
 
-  - Use JSHint to detect errors and potential problems. Every project should have a Grunt task for linting all JavaScript files: `grunt jshint`. The options for JSHint are stored in a `.jshintrc` file.
+  - [2.1](#2.1) <a name='2.1'></a> Use JSHint to detect errors and potential problems. Every project should have a Grunt task for linting all JavaScript files: `grunt jshint`. The options for JSHint are stored in a `.jshintrc` file.
 
-  - All options must be alphabetized and grouped (just an example):
+  - [2.2](#2.2) <a name='2.2'></a> All options must be alphabetized and grouped (just an example):
 
     ```json
     {
@@ -77,7 +77,7 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ## Types
 
-  - **Primitives**: When you access a primitive type you work directly on its value.
+  - [3.1](#3.1) <a name='3.1'></a> **Primitives**: When you access a primitive type you work directly on its value.
 
     + `string`
     + `number`
@@ -93,7 +93,7 @@ As far as our projects are made by more than one person, we should find out a wa
 
     console.log(foo, bar); // => 1, 9
     ```
-  - **Complex**: When you access a complex type you work on a reference to its value.
+  - [3.2](#3.2) <a name='3.2'></a> **Complex**: When you access a complex type you work on a reference to its value.
 
     + `object`
     + `array`
@@ -112,11 +112,11 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ## Objects
 
-😢
+ - [4.1](#4.1) <a name='4.1'></a> 😢
 
 ## Arrays
 
- - [00.0](#00.0) <a name='00.0'></a> Use the literal syntax for array creation.
+ - [5.1](#5.1) <a name='5.1'></a> Use the literal syntax for array creation.
 
   > Literal syntax can be way faster 💪
 
@@ -128,7 +128,7 @@ As far as our projects are made by more than one person, we should find out a wa
     var items = [];
     ```
 
-- [00.0](#00.0) <a name='00.0'></a> Use Array#push instead of direct assignment to add items to an array.
+- [5.2](#5.2) <a name='5.2'></a> Use Array#push instead of direct assignment to add items to an array.
 
     ```javascript
     var someStack = [];
@@ -141,7 +141,7 @@ As far as our projects are made by more than one person, we should find out a wa
     someStack.push('abracadabra');
     ```
 
-- [00.0](#00.0) <a name='00.0'></a> When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
+- [5.3](#5.3) <a name='5.3'></a> When you need to copy an array use Array#slice. [jsPerf](http://jsperf.com/converting-arguments-to-an-array/7)
 
     ```javascript
     var len = items.length;
@@ -157,7 +157,7 @@ As far as our projects are made by more than one person, we should find out a wa
     itemsCopy = items.slice();
     ```
 
-- [00.0](#00.0) <a name='00.0'></a> To convert an array-like object to an array, use Array#slice.
+- [5.4](#5.4) <a name='5.4'></a> To convert an array-like object to an array, use Array#slice.
 
     ```javascript
     function trigger() {
@@ -170,54 +170,54 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ## Strings
 
-😢
+ - [6.1](#6.1) <a name='6.1'></a> 😢
 
 ## Functions
 
- - [1.1](#1.1) <a name='1.1'></a> Prefer to use named function expression instead of anonymous function expression
+ - [7.1](#7.1) <a name='7.1'></a> Prefer to use named function expression instead of anonymous function expression
 
   > This helps you to debug your code, since the dev tools will show the name of the context which the error ocurred.
 
-```javascript
-// bad
-var anonymous = function() {}
+    ```javascript
+    // bad
+    var anonymous = function() {}
 
-// good
-var named = function named() {}
-```
+    // good
+    var named = function named() {}
+    ```
 
- - [1.2](#1.2) <a name='1.2'></a> Never declare a function in a non-function block.
+ - [7.2](#7.2) <a name='7.2'></a> Never declare a function in a non-function block.
 
-```javascript
-// bad
-while(true) {
-  function test() {
-    return false;
-  }
-}
-```
+    ```javascript
+    // bad
+    while(true) {
+      function test() {
+        return false;
+      }
+    }
+    ```
 
- - [1.3](#1.3) <a name='1.3'></a> Never name a parameter `arguments`.
+ - [7.3](#7.3) <a name='7.3'></a> Never name a parameter `arguments`.
 
   > This will take precedence over the `arguments` object that is given to every function scope.
 
-```javascript
-// bad
-function nope(name, options, arguments) {
-  // ...stuff...
-}
+    ```javascript
+    // bad
+    function nope(name, options, arguments) {
+      // ...stuff...
+    }
 
-// good
-function yup(name, options, args) {
-  // ...stuff...
-}
-```
+    // good
+    function yup(name, options, args) {
+      // ...stuff...
+    }
+    ```
 
 **[⬆ back to top](#topics)**
 
 ## Properties
 
-  - Use dot notation to access properties.
+  - [8.1](#8.1) <a name='8.1'></a> Use dot notation to access properties.
 
   > Dot notation is simpler and enforces `camelCase` when naming object keys.
 
@@ -234,7 +234,7 @@ function yup(name, options, args) {
   var userAge = user.age;
   ```
 
-  - Use subscript notation `[]` to access dynamic properties or properties that are also JavaScript reserved words.
+  - [8.2](#8.2) <a name='8.2'></a>  Use subscript notation `[]` to access dynamic properties or properties that are also JavaScript reserved words.
 
   > Subscript notation is sometimes tricky and should be used only when really needed.
 
@@ -259,125 +259,125 @@ function yup(name, options, args) {
 
 ## Variables
 
- - [1.1](#1.1) <a name='1.1'></a> Always use `var` to declare variables.
+ - [9.1](#9.1) <a name='9.1'></a> Always use `var` to declare variables.
 
   > Not doing so will result in global variables. We want to avoid polluting the global namespace.
 
-```javascript
-// super bad
-superPower = new SuperPower();
+    ```javascript
+    // super bad
+    superPower = new SuperPower();
 
-// super good
-var superPower = new SuperPower();
-```
+    // super good
+    var superPower = new SuperPower();
+    ```
 
- - [1.2](#1.2) <a name='1.2'></a> Use one `var` declaration per context.
+ - [9.2](#9.2) <a name='9.2'></a> Use one `var` declaration per context.
 
-```javascript
-// bad
-var items = getItems();
-var goSportsTeam = true;
-var dragonball = 'z';
+    ```javascript
+    // bad
+    var items = getItems();
+    var goSportsTeam = true;
+    var dragonball = 'z';
 
-// bad
-var items = getItems(),
-  goSportsTeam = true,
-  dragonball = 'z';
+    // bad
+    var items = getItems(),
+      goSportsTeam = true,
+      dragonball = 'z';
 
-// good
-var items = getItems(),
-  goSportsTeam = true,
-  dragonball = 'z';
-```
+    // good
+    var items = getItems(),
+      goSportsTeam = true,
+      dragonball = 'z';
+    ```
 
- - [1.3](#1.3) <a name='1.3'></a> Declare unassigned variables last.
+ - [9.3](#9.3) <a name='9.3'></a> Declare unassigned variables last.
 
  > This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
-```javascript
-// bad
-var items = getItems(),
-  goSportsTeam = true,
-  emptyVar,
-  dragonball = 'z';
+    ```javascript
+    // bad
+    var items = getItems(),
+      goSportsTeam = true,
+      emptyVar,
+      dragonball = 'z';
 
-// good
-var items = getItems(),
-  goSportsTeam = true,
-  dragonball = 'z',
-  emptyVar;
-```
+    // good
+    var items = getItems(),
+      goSportsTeam = true,
+      dragonball = 'z',
+      emptyVar;
+    ```
 
-- [1.4](#1.4) <a name='1.4'></a> Assign variables at the top of their scope.
+- [9.4](#9.4) <a name='9.4'></a> Assign variables at the top of their scope.
 
 > This helps avoid issues with variable declaration and assignment hoisting related issues.
 
-```javascript
-// bad
-function() {
-  test();
-  console.log('doing stuff..');
+    ```javascript
+    // bad
+    function() {
+      test();
+      console.log('doing stuff..');
 
-  //..other stuff..
+      //..other stuff..
 
-  var name = getName();
+      var name = getName();
 
-  if (name === 'test') {
-    return false;
-  }
+      if (name === 'test') {
+        return false;
+      }
 
-  return name;
-}
+      return name;
+    }
 
-// good
-function() {
-  var name = getName();
+    // good
+    function() {
+      var name = getName();
 
-  test();
-  console.log('doing stuff..');
+      test();
+      console.log('doing stuff..');
 
-  //..other stuff..
+      //..other stuff..
 
-  if (name === 'test') {
-    return false;
-  }
+      if (name === 'test') {
+        return false;
+      }
 
-  return name;
-}
+      return name;
+    }
 
-// bad - unnessary function call
-function() {
-  var name = getName();
+    // bad - unnessary function call
+    function() {
+      var name = getName();
 
-  if (!arguments.length) {
-    return false;
-  }
+      if (!arguments.length) {
+        return false;
+      }
 
-  this.setFirstName(name);
+      this.setFirstName(name);
 
-  return true;
-}
+      return true;
+    }
 
-// good
-function() {
-  var name;
+    // good
+    function() {
+      var name;
 
-  if (!arguments.length) {
-    return false;
-  }
+      if (!arguments.length) {
+        return false;
+      }
 
-  name = getName();
-  this.setFirstName(name);
+      name = getName();
+      this.setFirstName(name);
 
-  return true;
-}
-```
+      return true;
+    }
+    ```
 
 **[⬆ back to top](#topics)**
 
 ## Hoisting
 
-  - Variable declarations get hoisted to the top of their scope, but their assignment does not.
+  - [10.1](#10.1) <a name='10.1'></a> Variable declarations get hoisted to the top of their scope, but their assignment does not.
 
   > Javascript variable hoisting can be dangerous, lets declare what we are going to use before we used it 😎
 
@@ -407,7 +407,7 @@ function() {
     }
     ```
 
-  - Anonymous function expressions hoist their variable name, but not the function assignment.
+  - [10.2](#10.2) <a name='10.2'></a> Anonymous function expressions hoist their variable name, but not the function assignment.
 
     ```javascript
     function example() {
@@ -421,7 +421,7 @@ function() {
     }
     ```
 
-  - Named function expressions hoist the variable name, not the function name or the function body.
+  - [10.3](#10.3) <a name='10.3'></a> Named function expressions hoist the variable name, not the function name or the function body.
 
     ```javascript
     function example() {
@@ -449,7 +449,7 @@ function() {
     }
     ```
 
-  - Function declarations hoist their name and the function body.
+  - [10.4](#10.4) <a name='10.4'></a> Function declarations hoist their name and the function body.
 
     ```javascript
     function example() {
@@ -461,15 +461,17 @@ function() {
     }
     ```
 
+- For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
+
 **[⬆ back to top](#topics)**
 
 ## Comparison Operators & Equality
 
-😢
+ - [11.1](#11.1) <a name='11.1'></a> 😢
 
 ## Blocks
 
-  - Use braces with all blocks.
+  - [12.1](#12.1) <a name='12.1'></a> Use braces with all blocks.
 
     ```javascript
     // bad
@@ -493,7 +495,7 @@ function() {
     }
     ```
 
-  - If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace.
+  - [12.2](#12.2) <a name='12.2'></a> If you're using multi-line blocks with `if` and `else`, put `else` on the same line as your `if` block's closing brace.
 
     ```javascript
     // bad
@@ -518,11 +520,11 @@ function() {
 
 ## Comments
 
-😢
+ - [13.1](#13.1) <a name='13.1'></a> 😢
 
 ## Whitespace
 
- - [00.0](#00.0)<a name='00.0'></a> Use soft tabs set to 2 spaces.
+ - [14.1](#14.1)<a name='14.1'></a> Use soft tabs set to 2 spaces.
 
     ```javascript
     // bad
@@ -541,7 +543,7 @@ function() {
     }
     ```
 
- - [00.0](#00.0)<a name='00.0'></a> Place 1 space before the leading brace.
+ - [14.2](#14.2)<a name='14.2'></a> Place 1 space before the leading brace.
 
     ```javascript
     // bad
@@ -567,7 +569,7 @@ function() {
     });
     ```
 
- - [00.0](#00.0)<a name='00.0'></a> Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space before the argument list in function calls and declarations.
+ - [14.3](#14.3)<a name='14.3'></a> Place 1 space before the opening parenthesis in control statements (`if`, `while` etc.). Place no space before the argument list in function calls and declarations.
 
     ```javascript
     // bad
@@ -591,7 +593,7 @@ function() {
     }
     ```
 
- - [00.0](#00.0)<a name='00.0'></a> Set off operators with spaces.
+ - [14.4](#14.4)<a name='14.4'></a> Set off operators with spaces.
 
     ```javascript
     // bad
@@ -601,7 +603,7 @@ function() {
     var x = y + 5;
     ```
 
- - [00.0](#00.0)<a name='00.0'></a> End files with a single newline character.
+ - [14.5](#14.5)<a name='14.5'></a> End files with a single newline character.
 
     ```javascript
     // bad
@@ -625,7 +627,7 @@ function() {
     })(this);↵
     ```
 
- - [00.0](#00.0)<a name='00.0'></a> Leave a blank line after blocks and before the next statement
+ - [14.6](#14.6)<a name='14.6'></a> Leave a blank line after blocks and before the next statement
 
     ```javascript
     // bad
@@ -666,7 +668,7 @@ function() {
 
 ## Commas
 
-  - Leading commas: **Nope.**
+  - [15.1](#15.1) <a name='15.1'></a> Leading commas: **Nope.**
 
     ```javascript
     // bad
@@ -700,7 +702,7 @@ function() {
     };
     ```
 
-  - Additional trailing comma: **Yup.**
+  - [15.2](#15.2) <a name='15.2'></a> Additional trailing comma: **Yup.**
 
   > Why? This leads to cleaner git diffs. Also, transpilers like Babel will remove the additional trailing comma in the transpiled code which means you don't have to worry about the [trailing comma problem](es5/README.md#commas) in legacy browsers.
 
@@ -747,12 +749,12 @@ function() {
 
 ## Semicolons
 
-😢
+ - [16.1](#16.1) <a name='16.1'></a> 😢
 
 ## Type Casting & Coercion
 
-  - Perform type coercion at the beginning of the statement.
-  - Strings:
+  - [17.1](#17.1) <a name='17.1'></a> Perform type coercion at the beginning of the statement.
+  - [17.2](#17.2) <a name='17.2'></a> Strings:
 
     ```javascript
     //  => this.reviewScore = 9;
@@ -764,7 +766,7 @@ function() {
     var totalScore = String(this.reviewScore);
     ```
 
-  - Use `parseInt` for Numbers and always with a radix for type casting.
+  - [17.3](#17.3) <a name='17.3'></a> Use `parseInt` for Numbers and always with a radix for type casting.
 
     ```javascript
     var inputValue = '4';
@@ -788,7 +790,7 @@ function() {
     var val = parseInt(inputValue, 10);
     ```
 
-  - If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
+  - [17.4](#17.4) <a name='17.4'></a> If for whatever reason you are doing something wild and `parseInt` is your bottleneck and need to use Bitshift for [performance reasons](http://jsperf.com/coercion-vs-casting/3), leave a comment explaining why and what you're doing.
 
     ```javascript
     // good
@@ -800,7 +802,7 @@ function() {
     var val = inputValue >> 0;
     ```
 
-  - **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
+  - [17.5](#17.5) <a name='17.5'></a> **Note:** Be careful when using bitshift operations. Numbers are represented as [64-bit values](http://es5.github.io/#x4.3.19), but Bitshift operations always return a 32-bit integer ([source](http://es5.github.io/#x11.7)). Bitshift can lead to unexpected behavior for integer values larger than 32 bits. [Discussion](https://github.com/airbnb/javascript/issues/109). Largest signed 32-bit Int is 2,147,483,647:
 
     ```javascript
     2147483647 >> 0 //=> 2147483647
@@ -808,7 +810,7 @@ function() {
     2147483649 >> 0 //=> -2147483647
     ```
 
-  - Booleans:
+  - [17.6](#17.6) <a name='17.6'></a> Booleans:
 
     ```javascript
     var age = 0;
@@ -827,110 +829,110 @@ function() {
 
 ## Naming Conventions
 
- - [1.1](#1.1) <a name='1.1'></a> Avoid single letter names.
+ - [18.1](#18.1) <a name='18.1'></a> Avoid single letter names.
 
   > Developers don't have crystal balls, be descriptive with your naming.
 
-```javascript
-// awful
-function q() {
-  // ...stuff...
-}
+    ```javascript
+    // awful
+    function q() {
+      // ...stuff...
+    }
 
-// good
-function query() {
-  // ..stuff..
-}
-```
+    // good
+    function query() {
+      // ..stuff..
+    }
+    ```
 
- - [1.2](#1.2) <a name='1.2'></a> Use camelCase when naming objects, functions, and instances.
+ - [18.2](#18.2) <a name='18.2'></a> Use camelCase when naming objects, functions, and instances.
 
- ```javascript
-// awful
-function q() {
-  // ...stuff...
-}
+     ```javascript
+    // awful
+    function q() {
+      // ...stuff...
+    }
 
-// good
-// bad
-var OBJEcttsssss = {};
-var this_is_my_object = {};
-var o = {};
-function c() {}
+    // good
+    // bad
+    var OBJEcttsssss = {};
+    var this_is_my_object = {};
+    var o = {};
+    function c() {}
 
-// good
-var thisIsMyObject = {};
-function thisIsMyFunction() {}
-```
+    // good
+    var thisIsMyObject = {};
+    function thisIsMyFunction() {}
+    ```
 
- - [1.3](#1.3) <a name='1.3'></a> Use PascalCase when naming constructors or classes.
+ - [18.3](#18.3) <a name='18.3'></a> Use PascalCase when naming constructors or classes.
 
-```javascript
-// bad
-function user(options) {
-  this.name = options.name;
-}
+    ```javascript
+    // bad
+    function user(options) {
+      this.name = options.name;
+    }
 
-var bad = new user({
-  name: 'nope'
-});
+    var bad = new user({
+      name: 'nope'
+    });
 
-// good
-function User(options) {
-  this.name = options.name;
-}
+    // good
+    function User(options) {
+      this.name = options.name;
+    }
 
-var good = new User({
-  name: 'yup'
-});
-```
+    var good = new User({
+      name: 'yup'
+    });
+    ```
 
- - Name your functions.
+ - [18.4](#18.4) <a name='18.4'></a> Name your functions.
 
  > This is helpful for stack traces.
 
-```javascript
-// bad
-var log = function(msg) {
-  console.log(msg);
-};
+    ```javascript
+    // bad
+    var log = function(msg) {
+      console.log(msg);
+    };
 
-// good
-var log = function log(msg) {
-  console.log(msg);
-};
-```
+    // good
+    var log = function log(msg) {
+      console.log(msg);
+    };
+    ```
 
- - Your files should be the name of the main module you are exporting, but kebab-case.
+ - [18.5](#18.5) <a name='18.5'></a> Your files should be the name of the main module you are exporting, but kebab-case.
 
-```javascript
-// file contents
-function CheckBox() {
-  // code
-}
+    ```javascript
+    // file contents
+    function CheckBox() {
+      // code
+    }
 
-module.exports = CheckBox;
+    module.exports = CheckBox;
 
-// in some other file
-// bad
-var CheckBox = require('./checkBox');
+    // in some other file
+    // bad
+    var CheckBox = require('./checkBox');
 
-// bad
-var CheckBox = require('./check_box');
+    // bad
+    var CheckBox = require('./check_box');
 
-// bad
-var CheckBox = require('./CheckBox');
+    // bad
+    var CheckBox = require('./CheckBox');
 
-// good
-var CheckBox = require('./check-box');
-```
+    // good
+    var CheckBox = require('./check-box');
+    ```
 
 **[⬆ back to top](#topics)**
 
 ## Accessors
 
- - [00.0](#00.0) <a name='00.0'></a> Accessor functions for properties are not required.
- - [00.0](#00.0) <a name='00.0'></a> If you do make accessor functions use getVal() and setVal('hello').
+ - [19.1](#19.1) <a name='19.1'></a> Accessor functions for properties are not required.
+ - [19.2](#19.2) <a name='19.2'></a> If you do make accessor functions use getVal() and setVal('hello').
 
   > Makes way more sense to use `getters` and `setters` to retrieve and set values, and really easy to identify what those methods are doing.
 
@@ -948,7 +950,7 @@ var CheckBox = require('./check-box');
     dragon.setAge(25);
     ```
 
- - [00.0](#00) <a name='00.0'></a> If the property is a boolean, use isVal() or hasVal().
+ - [19.3](#19.3) <a name='19.3'></a> If the property is a boolean, use isVal() or hasVal().
 
     ```javascript
     // bad
@@ -961,7 +963,7 @@ var CheckBox = require('./check-box');
       return false;
     }
     ```
- - [00.0](#00.0) <a name='00.0'></a> It's okay to create get() and set() functions, but be consistent.
+ - [19.4](#19.4) <a name='19.4'></a> It's okay to create get() and set() functions, but be consistent.
 
     ```javascript
     function Jedi(options) {
@@ -983,96 +985,96 @@ var CheckBox = require('./check-box');
 
 ## Constructors
 
- - [1.1](#1.1) <a name='1.1'></a> Use capital letter when creating a Constructor function.
+ - [20.1](#20.1) <a name='20.1'></a> Use capital letter when creating a Constructor function.
   > It makes easier to indentify Contructors and common functions
 
-```javascript
-// bad
-function gang() {
+    ```javascript
+    // bad
+    function gang() {
 
-}
+    }
 
-// bad
-function GANG() {
+    // bad
+    function GANG() {
 
-}
+    }
 
-// good
-function Gang() {
+    // good
+    function Gang() {
 
-}
-```
+    }
+    ```
 
- - [1.2](#1.2) <a name='1.2'></a> Assign methods to the prototype object, instead of overwriting the prototype with a new object.
+ - [20.2](#20.2) <a name='20.2'></a> Assign methods to the prototype object, instead of overwriting the prototype with a new object.
  > Overwriting the prototype makes inheritance impossible: by resetting the prototype you'll overwrite the base!
 
-```javascript
-function Gang() {
+    ```javascript
+    function Gang() {
 
-}
+    }
 
-// bad
-Gang.prototype = {
-  fight: function fight() {
-    console.log('fighting');
-  },
+    // bad
+    Gang.prototype = {
+      fight: function fight() {
+        console.log('fighting');
+      },
 
-  block: function block() {
-    console.log('blocking');
-  }
-};
+      block: function block() {
+        console.log('blocking');
+      }
+    };
 
-// good
-Gang.prototype.fight = function fight() {
-  console.log('fighting');
-};
+    // good
+    Gang.prototype.fight = function fight() {
+      console.log('fighting');
+    };
 
-Gang.prototype.block = function block() {
-  console.log('blocking');
-};
-```
+    Gang.prototype.block = function block() {
+      console.log('blocking');
+    };
+    ```
 
-- [1.3](#1.3) <a name='1.3'></a> Methods can return `this`.
+- [20.3](#20.3) <a name='20.3'></a> Methods can return `this`.
  > Returning `this` helps method chaining. But it's not mandatory to do it.
 
-```javascript
-// bad
-Gang.prototype.jump = function() {
-  this.jumping = true;
-  return true;
-};
+    ```javascript
+    // bad
+    Gang.prototype.jump = function() {
+      this.jumping = true;
+      return true;
+    };
 
-Gang.prototype.setHeight = function(height) {
-  this.height = height;
-};
+    Gang.prototype.setHeight = function(height) {
+      this.height = height;
+    };
 
-var yo = new Gang();
-yo.jump(); // => true
-yo.setHeight(20); // => undefined
+    var yo = new Gang();
+    yo.jump(); // => true
+    yo.setHeight(20); // => undefined
 
-// good
-Gang.prototype.jump = function() {
-  this.jumping = true;
-  return this;
-};
+    // good
+    Gang.prototype.jump = function() {
+      this.jumping = true;
+      return this;
+    };
 
-Gang.prototype.setHeight = function(height) {
-  this.height = height;
-  return this;
-};
+    Gang.prototype.setHeight = function(height) {
+      this.height = height;
+      return this;
+    };
 
-var yo = new Gang();
+    var yo = new Gang();
 
-yo.jump()
-  .setHeight(20);
-```
+    yo.jump()
+      .setHeight(20);
+    ```
 
 **[⬆ back to top](#topics)**
 
 
 ## DOM Events
 
- - When attaching dom events (such as click, hover, etc) use the `on` approach and never use `event/alias`
+ - [21.1](#21.1) <a name='21.1'></a> When attaching dom events (such as click, hover, etc) use the `on` approach and never use `event/alias`
 
     ```js
     // bad
@@ -1081,7 +1083,7 @@ yo.jump()
     // good
     $el.on('click', this.onClick);
     ```
- - After attach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
+ - [21.2](#21.2) <a name='21.2'></a> After attach events into DOM element, name your callbacks such as 'onClick', `onHover`, etc
 
     ```js
     // bad
@@ -1092,7 +1094,7 @@ yo.jump()
     $el.on('hover', this.onHover);
     $el.on('mouseleave', this.onMouseLeave);
     ```
- - Prefer to use a method named `bind` to create any event attachment of your needs.
+ - [21.3](#21.3) <a name='21.3'></a> Prefer to use a method named `bind` to create any event attachment of your needs.
 
     ```js
     // bad
@@ -1120,54 +1122,54 @@ yo.jump()
 
 ## jQuery
 
-😢
+ - [22.1](#22.1) <a name='22.1'></a> 😢
 
 ## Chained Method Calls
 
- - [1.1](#1.1) <a name='1.1'></a> When a chain of method calls is bigger than one, there must be one call per line, with the first call on a separate line from the object the methods are called on.
+ - [23.1](#23.1) <a name='23.1'></a> When a chain of method calls is bigger than one, there must be one call per line, with the first call on a separate line from the object the methods are called on.
 
-```javascript
-// bad
-elements
-  .addClass("foo");
+    ```javascript
+    // bad
+    elements
+      .addClass("foo");
 
-// good
-elements.addClass('foo');
+    // good
+    elements.addClass('foo');
 
-// bad
-elements.addClass('foo').children().html('hello').end().appendTo('body');
+    // bad
+    elements.addClass('foo').children().html('hello').end().appendTo('body');
 
-// good
-elements
-  .addClass('foo')
-  .children()
-  .html('hello')
-  .end()
-  .appendTo('body');
-```
+    // good
+    elements
+      .addClass('foo')
+      .children()
+      .html('hello')
+      .end()
+      .appendTo('body');
+    ```
 
 
 ## Switch Statements
 
- - [1.1](#1.1) <a name='1.1'></a> The usage of switch statements is generally discouraged, but can be useful when there are a large number of cases.
+ - [24.1](#24.1) <a name='24.1'></a> The usage of switch statements is generally discouraged, but can be useful when there are a large number of cases.
 
-```javascript
-// good
-switch (event.keyCode) {
-  case 1:
-    x();
-    break;
-  case 2:
-    y();
-    break;
-  default:
-    z();
-}
-```
+    ```javascript
+    // good
+    switch (event.keyCode) {
+      case 1:
+        x();
+        break;
+      case 2:
+        y();
+        break;
+      default:
+        z();
+    }
+    ```
 
 ## Semicolons
 
-  - **Yup.**
+  - [25.1](#25.1) <a name='25.1'></a>  **Yup.**
 
     ```javascript
     // bad
@@ -1192,5 +1194,3 @@ switch (event.keyCode) {
     [Read more](http://stackoverflow.com/a/7365214/1712802).
 
 **[⬆ back to top](#table-of-contents)**
-
-  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
