@@ -3,3 +3,4 @@
 _site
 .grunt
 node_modules
+*.swp
