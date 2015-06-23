@@ -112,6 +112,8 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ## Objects
 
+😢
+
 ## Arrays
 
  - [00.0](#00.0) <a name='00.0'></a> Use the literal syntax for array creation.
@@ -167,6 +169,8 @@ As far as our projects are made by more than one person, we should find out a wa
 **[⬆ back to top](#topics)**
 
 ## Strings
+
+😢
 
 ## Functions
 
@@ -461,6 +465,8 @@ function() {
 
 ## Comparison Operators & Equality
 
+😢
+
 ## Blocks
 
   - Use braces with all blocks.
@@ -511,6 +517,8 @@ function() {
 **[⬆ back to top](#topics)**
 
 ## Comments
+
+😢
 
 ## Whitespace
 
@@ -738,6 +746,8 @@ function() {
 **[⬆ back to top](#topics)**
 
 ## Semicolons
+
+😢
 
 ## Type Casting & Coercion
 
@@ -1109,6 +1119,8 @@ yo.jump()
 **[⬆ back to top](#topics)**
 
 ## jQuery
+
+😢
 
 ## Chained Method Calls
 
