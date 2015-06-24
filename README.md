@@ -11,30 +11,30 @@ As far as our projects are made by more than one person, we should find out a wa
 
 ### Topics
 
-* [EditorConfig](#editorconfig)
-* [Linting](#linting)
-* [Types](#types)
-* [Objects](#objects) *missing*
-* [Arrays](#arrays)
-* [Strings](#strings) *missing*
-* [Functions](#functions)
-* [Properties](#properties)
-* [Variables](#variables)
-* [Hoisting](#hoisting)
-* [Comparison Operators & Equality](#comparison-operators--equality) *missing*
-* [Blocks](#blocks)
-* [Comments](#comments) *missing*
-* [Whitespace](#whitespace)
-* [Commas](#commas)
-* [Semicolons](#semicolons) *missing*
-* [Type Casting & Coercion](#type-casting--coercion)
-* [Naming Conventions](#naming-conventions)
-* [Accessors](#accessors)
-* [Constructors](#constructors)
-* [DOM Events](#dom-events)
-* [jQuery](#jquery) *missing*
-* [Chained Method Calls](#chained-method-calls)
-* [Switch statements](#switch-statements)
+* [EditorConfig](http://editorconfig.org/)
+* [Linting](http://contribute.jquery.org/style-guide/js/#linting)
+* [Types](https://github.com/airbnb/javascript#types)
+* [Objects](https://github.com/airbnb/javascript/tree/master/es5#objects) *missing*
+* [Arrays](https://github.com/airbnb/javascript#arrays)
+* [Strings](https://github.com/airbnb/javascript#strings) *missing*
+* [Functions](https://github.com/airbnb/javascript#functions)
+* [Properties](https://github.com/airbnb/javascript#properties)
+* [Variables](https://github.com/airbnb/javascript#variables)
+* [Hoisting](https://github.com/airbnb/javascript#hoisting)
+* [Comparison Operators & Equality](https://github.com/airbnb/javascript#comparison-operators--equality) *missing*
+* [Blocks](https://github.com/airbnb/javascript#blocks)
+* [Comments](https://github.com/airbnb/javascript#comments) *missing*
+* [Whitespace](https://github.com/airbnb/javascript#whitespace)
+* [Commas](https://github.com/airbnb/javascript#commas)
+* [Semicolons](https://github.com/airbnb/javascript#semicolons) *missing*
+* [Type Casting & Coercion](https://github.com/airbnb/javascript#type-casting--coercion)
+* [Naming Conventions](https://github.com/airbnb/javascript#naming-conventions)
+* [Accessors](https://github.com/airbnb/javascript#accessors)
+* [Constructors](https://github.com/airbnb/javascript#constructors)
+* [DOM Events](https://github.com/airbnb/javascript#events)
+* [jQuery](https://github.com/airbnb/javascript#jquery)
+* [Chained Method Calls](http://contribute.jquery.org/style-guide/js/#chained-method-calls)
+* [Switch statements](http://contribute.jquery.org/style-guide/js/#switch-statements)
 
 ## EditorConfig
 
@@ -1166,6 +1166,9 @@ As far as our projects are made by more than one person, we should find out a wa
         z();
     }
     ```
+**[⬆ back to top](#table-of-contents)**
+
+  - For more information refer to [JavaScript Scoping & Hoisting](http://www.adequatelygood.com/2010/2/JavaScript-Scoping-and-Hoisting) by [Ben Cherry](http://www.adequatelygood.com/).
 
 ## Semicolons
 
@@ -1194,3 +1197,65 @@ As far as our projects are made by more than one person, we should find out a wa
     [Read more](http://stackoverflow.com/a/7365214/1712802).
 
 **[⬆ back to top](#table-of-contents)**
+
+## jQuery
+
+  - Prefix jQuery object variables with a `$`.
+
+    ```javascript
+    // bad
+    var sidebar = $('.sidebar');
+
+    // good
+    var $sidebar = $('.sidebar');
+    ```
+
+  - Cache jQuery lookups.
+
+    ```javascript
+    // bad
+    function setSidebar() {
+      $('.sidebar').hide();
+
+      // ...stuff...
+
+      $('.sidebar').css({
+        'background-color': 'pink'
+      });
+    }
+
+    // good
+    function setSidebar() {
+      var $sidebar = $('.sidebar');
+      $sidebar.hide();
+
+      // ...stuff...
+
+      $sidebar.css({
+        'background-color': 'pink'
+      });
+    }
+    ```
+
+  - For DOM queries use Cascading `$('.sidebar ul')` or parent > child `$('.sidebar > ul')`. [jsPerf](http://jsperf.com/jquery-find-vs-context-sel/16)
+  - Use `find` with scoped jQuery object queries.
+
+    ```javascript
+    // bad
+    $('ul', '.sidebar').hide();
+
+    // bad
+    $('.sidebar').find('ul').hide();
+
+    // good
+    $('.sidebar ul').hide();
+
+    // good
+    $('.sidebar > ul').hide();
+
+    // good
+    $sidebar.find('ul').hide();
+    ```
+
+**[⬆ back to top](#table-of-contents)**
+
