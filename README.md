@@ -290,7 +290,7 @@ As far as our projects are made by more than one person, we should find out a wa
       dragonball = 'z';
     ```
 
- - [9.3](#9.3) <a name='9.3'></a> Declare unassigned variables last.
+ - [9.3](#9.3) <a name='9.3'></a> 	re unassigned variables last.
 
  > This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
