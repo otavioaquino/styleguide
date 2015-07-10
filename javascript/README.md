@@ -13,8 +13,10 @@
 7. [Properties](#properties)
 8. [Arrays](#arrays)
 9. [Strings](#strings)
+10. [Numbers](#numbers)
 10. [Functions](#functions)
 11. [Equality comparisons](#equality-comparisons)
+12. [Conditionals](#conditionals)
 12. [Blocks](#blocks)
 13. [Comments](#comments)
 14. [Naming conventions](#naming-conventions)
@@ -225,6 +227,24 @@ String.prototype.half = function () {
 function half(text) {
   return text.substr(0, text.length / 2);
 }
+```
+
+* [4.2](#4.2) Don't instantiate an object unless you assign it to a variable and use it.
+
+> Not doing so configures a code smell and means that the constructor should be replaced with a function that doesn't require `new` to be used.
+
+```javascript
+// Bad
+new Person();
+
+// Bad (`person` is never used)
+var person = new Person();
+
+// Good
+Person();
+
+// Good
+Person.create();
 ```
 
 **[⬆ back to top](#toc)**
@@ -450,6 +470,24 @@ value.toString(); // '42'
 
 **[⬆ back to top](#toc)**
 
+## Numbers
+
+* Do not use floating decimals.
+
+> Althought they're valid JavaScript, they make the code harder to read.
+
+```javascript
+// Bad
+var foo = .5;
+var bar = -.7;
+var baz = 2.;
+
+// Good
+var foo = 0.5;
+var bar = -0.7;
+var baz = 2.0;
+```
+
 ## Functions
 
 * [10.1](#10.1) Always use the [function declaration form](http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname) instead of function expressions.
@@ -540,6 +578,22 @@ function(callback) {
 }
 ```
 
+* [10.7](#10.7) Do not modify function parameter values.
+
+> Often, assignment to function parameters is unintended and indicative of a mistake or programmer error.
+
+```javascript
+// Bad
+function foo(bar) {
+  bar = 13;
+}
+
+// Good
+function foo(bar) {
+  var baz = bar;
+}
+```
+
 ## Equality comparisons
 
 * [11.1](#11.1) Use strict equality to compare variable values
@@ -547,6 +601,43 @@ function(callback) {
 > Strict equality checks for both value and type which is why we expect.
 
 **[⬆ back to top](#toc)**
+
+## Conditionals
+
+* Ternary operators should only be used to compare boolean variables.
+
+```javascript
+// Bad
+items.length ? show() : hide();
+
+// Really bad (I have no idea what's happening here)
+items.length === 0 && settings.id === 'foo' ? hide() : show();
+
+// Good
+var isEmpty = items.length === 0;
+var isFoo = settings.id === 'foo';
+
+isEmpty && isFoo ? hide() : show();
+
+// Even better
+var shouldHide = isEmpty && isFoo;
+
+shouldHide ? hide() : show();
+```
+
+* Don't use double negation `!!` to test booleans.
+
+```javascript
+// Bad
+if(!!foo) {
+  // ...
+}
+
+// Good
+if(foo) {
+  // ...
+}
+```
 
 ## Blocks
 
