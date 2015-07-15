@@ -1111,6 +1111,8 @@ $.trim('   f oo  '); // 'foo'
 
 ## Code linting
 
+We use [ESLint](http://eslint.org) to lint our JavaScript code. All the rules can be found on the [`.eslintrc`](/linters/.eslintrc) file.
+
 **[⬆ back to top](#toc)**
 
 ## Resources
