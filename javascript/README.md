@@ -269,6 +269,7 @@ if (matchNumbers.test(text)) {
 }
 ```
 
+
 **[⬆ back to top](#toc)**
 
 ## Objects
@@ -958,7 +959,7 @@ function() {
 ↵
 ```
 
-* [15.3](#15.3) Place a space before and after a condition or loop declarations.
+* [15.3](#15.3) Place a space before and after conditions and loop declarations.
 
 ```javascript
 // Bad
@@ -1002,19 +1003,15 @@ for (var i = 0; i < 42; ++i) {
 }
 ```
 
-* [15.6](#15.6) Place a space after each function argument and add inner spaces.
+* [15.6](#15.6) Place a space after each function argument.
 
 ```javascript
 // Bad
 function setUser(name,surname,age){
 }
 
-// Bad (no inner spaces)
-function setUser(name, surname, age) {
-}
-
 // Good
-function setUser( name, surname, age ) {
+function setUser(name, surname, age) {
 }
 ```
 
@@ -1036,6 +1033,7 @@ var setup = { foo: 'bar' };
 
 // Good
 var setup = {
+  foo: 'bar'
 }
 ```
 
