@@ -14,15 +14,16 @@
 8. [Arrays](#arrays)
 9. [Strings](#strings)
 10. [Numbers](#numbers)
-10. [Functions](#functions)
-11. [Equality comparisons](#equality-comparisons)
-12. [Conditionals](#conditionals)
-12. [Blocks](#blocks)
-13. [Comments](#comments)
-14. [Naming conventions](#naming-conventions)
-15. [Whitespace](#whitespace)
-16. [jQuery](#jquery)
-17. [Resources](#resources)
+11. [Functions](#functions)
+12. [Equality comparisons](#equality-comparisons)
+13. [Conditionals](#conditionals)
+14. [Blocks](#blocks)
+15. [Comments](#comments)
+16. [Naming conventions](#naming-conventions)
+17. [Whitespace](#whitespace)
+18. [jQuery](#jquery)
+19. [Code linting](#code-linting)
+20. [Resources](#resources)
 
 ## Semicolons
 
@@ -48,10 +49,12 @@
 
 ## Strict mode
 
-* [2.1](#2.1) Always use the strict mode pragma. Just be aware not to use it globally.
+* [2.1](#2.1) Make use of the strict mode pragma.
+
+> Just be aware not to use it globally.
 
 ```javascript
-// Bad
+// Bad (pragma is being used globally)
 'use strict';
 
 function doSomething() {
@@ -269,7 +272,6 @@ if (matchNumbers.test(text)) {
 }
 ```
 
-
 **[⬆ back to top](#toc)**
 
 ## Objects
@@ -473,7 +475,7 @@ value.toString(); // '42'
 
 ## Numbers
 
-* Do not use floating decimals.
+* [10.1](#10.1) Do not use floating decimals.
 
 > Althought they're valid JavaScript, they make the code harder to read.
 
@@ -489,13 +491,15 @@ var bar = -0.7;
 var baz = 2.0;
 ```
 
+**[⬆ back to top](#toc)**
+
 ## Functions
 
-* [10.1](#10.1) Always use the [function declaration form](http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname) instead of function expressions.
+* [11.1](#11.1) Always use the [function declaration form](http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname) instead of function expressions.
 
 ```javascript
 // Bad
-var sum = function (x, y) {
+var sum = function(x, y) {
   return x + y;
 };
 
@@ -505,7 +509,7 @@ function sum(x, y) {
 }
 ```
 
-* [10.2](#10.2) Favor named function expression instead of anonymous function expression.
+* [11.2](#11.2) Favor named function expression instead of anonymous function expression.
 
 > This helps you to debug your code, since the dev tools will show the name of the context which the error has ocurred.
 
@@ -517,7 +521,7 @@ var anonymous = function() {}
 var named = function named() {}
 ```
 
-* [10.3](#10.3) Do not declare a function in a non-function block.
+* [11.3](#11.3) Do not declare a function in a non-function block.
 
 ```javascript
 // Just don't
@@ -528,7 +532,7 @@ while(true) {
 }
 ```
 
-* [10.4](#10.4) Do not name a parameter `arguments`.
+* [11.4](#11.4) Do not name a parameter `arguments`.
 
 > This will take precedence over the `arguments` object that is given to every function scope.
 
@@ -544,7 +548,7 @@ function yup(name, options, args) {
 }
 ```
 
-* [10.5](#10.5) Whenever you have more than `3` arguments being passed to a function use an object instead.
+* [11.5](#11.5) Whenever you have more than `3` arguments being passed to a function use an object instead.
 
 ```javascript
 // Bad
@@ -571,7 +575,7 @@ setUser({
 });
 ```
 
-* [10.6](#10.6) Use `Function()` as no-op.
+* [11.6](#11.6) Use `Function()` as no-op.
 
 ```javascript
 function(callback) {
@@ -579,7 +583,7 @@ function(callback) {
 }
 ```
 
-* [10.7](#10.7) Do not modify function parameter values.
+* [11.7](#11.7) Do not modify function parameter values.
 
 > Often, assignment to function parameters is unintended and indicative of a mistake or programmer error.
 
@@ -595,9 +599,11 @@ function foo(bar) {
 }
 ```
 
+**[⬆ back to top](#toc)**
+
 ## Equality comparisons
 
-* [11.1](#11.1) Use strict equality to compare variable values
+* [12.1](#12.1) Use strict equality to compare variable values
 
 > Strict equality checks for both value and type which is why we expect.
 
@@ -605,7 +611,7 @@ function foo(bar) {
 
 ## Conditionals
 
-* Ternary operators should only be used to compare boolean variables.
+* [13.1](#13.1) Ternary operators should only be used to compare booleans.
 
 ```javascript
 // Bad
@@ -626,7 +632,7 @@ var shouldHide = isEmpty && isFoo;
 shouldHide ? hide() : show();
 ```
 
-* Don't use double negation `!!` to test booleans.
+* [13.2](#13.2) Don't use double negation `!!` to test booleans.
 
 ```javascript
 // Bad
@@ -642,7 +648,7 @@ if(foo) {
 
 ## Blocks
 
-* [12.1](#12.1) Always wrap blocks within braces and embrace new lines.
+* [14.1](#14.1) Always wrap blocks within braces and embrace new lines.
 
 ```javascript
 // Bad
@@ -678,13 +684,13 @@ while(true) {
 
 ## Comments
 
-* [13.1](#13.1) Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose.
+* [15.1](#15.1) Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose.
 
-* [13.2](#13.2) Using `FIXME` and `TODO` tags can help other developers understand and maintain your code.
+* [15.2](#15.2) Using `FIXME` and `TODO` tags can help other developers understand and maintain your code. In multiline comments, add a line break and place them at the end of the comment.
 
-* [13.3](#13.3) Use documentation block syntax for multiline comments.
+* [15.3](#15.3) Use documentation block syntax for multiline comments.
 
-* [13.4](#13.4) Use `//` for single line comments. Place them on a newline above the subject of the comment and add an empty line before the comment.
+* [15.4](#15.4) Use `//` for single line comments. Place them on a newline above the subject of the comment and add an empty line before the comment.
 
 ```javascript
 // Bad
@@ -693,6 +699,9 @@ while(true) {
 Used to match `RegExp` special characters.
 See this [article on `RegExp` characters](http://www.regular-expressions.info/characters.html#special)
 for more details.
+
+TODO: Let the web service handle the validation.
+FIXME: Bad performance.
 */
 
 // Good
@@ -701,6 +710,9 @@ for more details.
 * Used to match `RegExp` special characters.
 * See this [article on `RegExp` characters](http://www.regular-expressions.info/characters.html#special)
 * for more details.
+*
+* TODO: Let the web service handle the validation.
+* FIXME: Bad performance.
 */
 
 var matchSpecialChars = /[.*+?^${}()|[\]\/\\]/g;
@@ -746,7 +758,7 @@ function bootstrap() {
 
 ## Naming conventions
 
-* [14.1](#14.1) Use `PascalCase` when naming constructors.
+* [16.1](#16.1) Use `PascalCase` when naming constructors.
 
 ```javascript
 // Bad
@@ -766,7 +778,7 @@ function CrewMember(name, role) {
 var designer = new CrewMember('Vinicius', 'Designer');
 ```
 
-* [14.2](#14.2) Avoid single letter names and abbreviations. Be descriptive and clear.
+* [16.2](#16.2) Avoid single letter names and abbreviations. Be descriptive and clear.
 
 ```javascript
 // Bad
@@ -806,7 +818,7 @@ function initialize() {
 }
 ```
 
-* [14.3](#14.3) Always close constructor invocations with parenthesis.
+* [16.3](#16.3) Always close constructor invocations with parenthesis.
 
 > It's going to be easier to pass new constructor values if needed in the future.
 
@@ -819,7 +831,7 @@ var bar = new FooBar();
 var baz = new FooBar(1, 'lorem');
 ```
 
-* [14.4](#14.4) Always use a leading underscore `_` when naming private properties and methods.
+* [16.4](#16.4) Always use a leading underscore `_` when naming private properties and methods.
 
 ```javascript
 // Bad
@@ -830,7 +842,7 @@ var __name = 'Bar';
 var _name = 'Baz';
 ```
 
-* [14.5](#14.5) When making a reference to `this` name it as `self`.
+* [16.5](#16.5) When making a reference to `this` name it as `self`.
 
 ```javascript
 // Bad
@@ -861,7 +873,7 @@ function() {
 }
 ```
 
-* [14.6](#14.6) Booleans should start with "is", "has", or "should".
+* [16.6](#16.6) Booleans should start with "is", "has", or "should".
 
 > This give us a clear idea of what that variable is.
 
@@ -877,7 +889,7 @@ var isReady = true,
     hasAnimation = true;
 ```
 
-* [14.7](#14.7) When naming an acessor, start with `get` or `set`. Also always name the getter argument as `value`.
+* [16.7](#16.7) When naming an acessor, start with `get` or `set`. Also always name the getter argument as `value`.
 
 ```javascript
 var currentStatus;
@@ -901,7 +913,7 @@ function getStatus() {
 }
 ```
 
-* [14.8](#14.8) When naming an event handler, combine its action with the event type.
+* [16.8](#16.8) When naming an event handler, combine its action with the event type.
 
 > This way it's easier to spot if your function is doing too much.
 
@@ -925,7 +937,7 @@ function toggleColorOnClick() {
 
 ## Whitespace
 
-* [15.1](#15.1) Use soft tabs set to `2` spaces and never mix spaces with tabs.
+* [17.1](#17.1) Use soft tabs set to `2` spaces and never mix spaces with tabs.
 
 ```javascript
 // Bad
@@ -949,7 +961,7 @@ function() {
 }
 ```
 
-* [15.2](#15.2) Always add an empty line at the end of your file.
+* [17.2](#17.2) Always add an empty line at the end of your file.
 
 ```javascript
 (function() {
@@ -959,7 +971,7 @@ function() {
 ↵
 ```
 
-* [15.3](#15.3) Place a space before and after conditions and loop declarations.
+* [17.3](#17.3) Place a space before and after conditions and loop declarations.
 
 ```javascript
 // Bad
@@ -979,7 +991,7 @@ while (false) {
 }
 ```
 
-* [15.4](#15.4) Set off operators with spaces.
+* [17.4](#17.4) Set off operators with spaces.
 
 ```javascript
 // Bad
@@ -989,7 +1001,7 @@ var x=y+5;
 var x = y + 5;
 ```
 
-* [15.5](#15.5) Place a space after loop steps.
+* [17.5](#17.5) Place a space after loop steps.
 
 ```javascript
 // Bad
@@ -1003,7 +1015,7 @@ for (var i = 0; i < 42; ++i) {
 }
 ```
 
-* [15.6](#15.6) Place a space after each function argument.
+* [17.6](#17.6) Place a space after each function argument.
 
 ```javascript
 // Bad
@@ -1015,7 +1027,7 @@ function setUser(name, surname, age) {
 }
 ```
 
-* [15.7](#15.7) Objects properties should be split into new lines.
+* [17.7](#17.7) Objects properties should be split into new lines.
 
 ```javascript
 // Bad
@@ -1037,7 +1049,7 @@ var setup = {
 }
 ```
 
-* [15.8](#15.8) Use indentation when making long method chains.
+* [17.8](#17.8) Use indentation when making long method chains.
 
 ```javascript
 // Bad
@@ -1056,7 +1068,7 @@ $('.js-items')
 
 ## jQuery
 
-* [16.1](#16.1) Always cache jQuery lookups.
+* [18.1](#18.1) Always cache jQuery lookups.
 
 ```javascript
 // Bad
@@ -1071,11 +1083,11 @@ $item
   .addClass('is-disabled');
 ```
 
-* [16.2](#16.2) Prefer `remove()` over `empty()`.
+* [18.2](#18.2) Prefer `remove()` over `empty()`.
 
 > `remove()` is faster because it doesn't completely rewrite the DOM node.
 
-* [16.3](#16.3) Always favor jQuery helpers over third-party and custom stuff.
+* [18.3](#18.3) Always favor jQuery helpers over third-party and custom stuff.
 
 ```javascript
 // Bad (importing Underscore/LoDash just to use `_.bind()`)
@@ -1097,6 +1109,10 @@ $.trim('   f oo  '); // 'foo'
 
 **[⬆ back to top](#toc)**
 
+## Code linting
+
+**[⬆ back to top](#toc)**
+
 ## Resources
 
 ### Inspiration
@@ -1105,9 +1121,5 @@ $.trim('   f oo  '); // 'foo'
 * [Magnetis JavaScript Style Guide](https://github.com/magnetis/styleguide/blob/master/JavaScript.md)
 * [Google JavaScript Style Guide](http://google-styleguide.googlecode.com/svn/trunk/javascriptguide.xml?showone=Semicolons#Semicolons)
 * [Nicolas Bevacqua's JavaScript Style Guide](https://github.com/bevacqua/js)
-
-### Tools
-
-* [ESLint](http://eslint.org)
 
 **[⬆ back to top](#toc)**
