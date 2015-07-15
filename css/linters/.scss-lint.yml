@@ -1,0 +1,171 @@
+#
+# Magnetis SCSS linter rules
+# https://github.com/magnetis/styleguide
+#
+# SCSS lint website
+# https://sublime.wbond.net/packages/SublimeLinter-contrib-scss-lint
+#
+# SCSS linter properties documentation
+# https://github.com/causes/scss-lint/blob/master/lib/scss_lint/linter/README.md
+#
+linters:
+  # Prefer `border: 0` instead of `border: none`.
+  BorderZero:
+    enabled: true
+
+  # IDs, classes, types, placeholders, and pseudo-selectors should be all lowercase.
+  CapitalizationInSelector:
+    enabled: true
+
+  # Prefer hexadecimal color codes over color keywords.
+  ColorKeyword:
+    enabled: true
+
+  # Enable comments with `//` and `/* ... */`.
+  Comment:
+    enabled: false
+
+  # Reports @debug statements (which you probably left behind accidentally).
+  DebugStatement:
+    enabled: true
+
+  # Write @extend statements first in rule sets, followed by property declarations and then other nested rule sets.
+  DeclarationOrder:
+    enabled: true
+
+  # Reports when you define the same property twice in a single rule set.
+  DuplicateProperty:
+    enabled: true
+
+  # Place @else statements on the same line as the preceding curly brace.
+  ElsePlacement:
+    enabled: true
+    style: same_line
+
+  # Separate rule, function, and mixin declarations with empty lines.
+  EmptyLineBetweenBlocks:
+    enabled: true
+    ignore_single_line_blocks: true
+
+  # Reports when you have an empty rule set.
+  EmptyRule:
+    enabled: true
+
+  # Enforce newline at EOF.
+  FinalNewline:
+    enabled: true
+    present: true
+
+  # No need to use shorthand hexadecimal syntax only (although it's prefered).
+  HexLength:
+    enabled: false
+
+  # Checks if hexadecimal colors are written in lowercase.
+  HexNotation:
+    enabled: true
+    style: lowercase
+
+  # Ensure hexadecimal colors are valid.
+  HexValidation:
+    enabled: true
+
+  # Don't combine additional selectors with an ID selector.
+  IdWithExtraneousSelector:
+    enabled: true
+
+  # Use two spaces per indentation level.
+  Indentation:
+    enabled: true
+    width: 2
+
+  # Don't write leading zeros for numeric values with a decimal point.
+  LeadingZero:
+    enabled: true
+    style: exclude_zero
+
+  # Reports when you define the same selector twice in a single sheet.
+  MergeableSelector:
+    enabled: true
+    force_nesting: false
+
+  # Allow us to use underscore when naming things (useful because of SMACSS/BEM notation).
+  NameFormat:
+    enabled: false
+
+  # Allow us to use classes and placeholders with `@extend`.
+  PlaceholderInExtend:
+    enabled: false
+
+  # Sorting property names in alphabetical order is bullshit.
+  PropertySortOrder:
+    enabled: false
+
+  # Reports when you use an unknown CSS property (doesn't care about vendor prefixes).
+  PropertySpelling:
+    enabled: true
+    extra_properties: []
+
+  # Don't write selectors with a depth of applicability greater than 3.
+  SelectorDepth:
+    enabled: true
+    max_depth: 3
+
+  # Prefer the shortest shorthand form possible for properties that support it.
+  Shorthand:
+    enabled: true
+
+  # Properties within rule sets should each reside on their own line.
+  SingleLinePerSelector:
+    enabled: true
+
+  # Commas in lists should be followed by a space.
+  SpaceAfterComma:
+    enabled: true
+
+  # Properties should be formatted with a single space separating the colon from the property's value.
+  SpaceAfterPropertyColon:
+    enabled: true
+    style: one_space
+
+  # Properties should be formatted with no space between the name and the colon.
+  SpaceAfterPropertyName:
+    enabled: true
+
+  # Opening braces should be preceded by a single space.
+  SpaceBeforeBrace:
+    enabled: true
+    allow_single_line_padding: false
+
+  # Parentheses should not be padded with spaces.
+  SpaceBetweenParens:
+    enabled: true
+    spaces: 0
+
+  # Enforce double quotes.
+  StringQuotes:
+    enabled: true
+    style: double_quotes
+
+  # Property values, @extend directives, @include directives, and variable declarations should always end with a semicolon.
+  TrailingSemicolon:
+    enabled: true
+
+  # Numeric values should not contain unnecessary fractional portions.
+  UnnecessaryMantissa:
+    enabled: true
+
+  # Enable us to use relative and absolute paths for URL values.
+  UrlFormat:
+    enabled: false
+
+  # URLs should always be enclosed within quotes.
+  UrlQuotes:
+    enabled: true
+
+  # Omit length units on zero values.
+  ZeroUnit:
+    enabled: true
+
+  # Don't care about Compass.
+  Compass::*:
+    enabled: false
