@@ -7,28 +7,28 @@
 1. [Preprocessor](#preprocessor)
 2. [Syntax](#syntax)
 3. [Best practices](#best-practices)
-1. [Colors](#colors)
-2. [Units](#units)
-3. [Inline assets](#inline-assets)
-4. [Pseudo elements](#pseudo-elements)
-5. [Specificity and nesting](#specificity-and-nesting)
-4. [Quotes](#quotes)
-5. [Comments](#comments)
-2. [Naming conventions](#naming-conventions)
-3. [Namespaces](#namespaces)
-3. [Whitespace](#whitespace)
-4. [Code linting](#code-linting)
-5. [Resources](#resources)
+4. [Colors](#colors)
+5. [Units](#units)
+6. [Inline assets](#inline-assets)
+7. [Pseudo elements](#pseudo-elements)
+8. [Specificity and nesting](#specificity-and-nesting)
+9. [Quotes](#quotes)
+10. [Comments](#comments)
+11. [Naming conventions](#naming-conventions)
+12. [Namespaces](#namespaces)
+13. [Whitespace](#whitespace)
+14. [Code linting](#code-linting)
+15. [Resources](#resources)
 
 ## Preprocessor
 
-* [1.0](#1.0) [Sass](http://sass-lang.com) is our preprocessor of choice.
+* [1.1](#1.1) [Sass](http://sass-lang.com) is our preprocessor of choice.
 
-* [1.1](#1.1) Limit the use of its features to only variables and mixins.
+* [1.2](#1.2) Limit the use of its features to only variables and mixins.
 
 > Getting too crazy with Sass can lead to both terrible code maintenance and output.
 
-* [1.2](#1.2) `@extend` is allowed only when used with placeholders.
+* [1.3](#1.3) `@extend` is allowed only when used with placeholders.
 
 > `@extend`ing classes can lead to terrible code output.
 
@@ -36,7 +36,7 @@
 
 ## Syntax
 
-* Use the Sassy CSS (SCSS) syntax.
+* [2.1](#2.1) Use the Sassy CSS (SCSS) syntax.
 
 > Since regular CSS code is valid SCSS, it's a win-win.
 
@@ -44,24 +44,86 @@
 
 ## Best practices
 
-* Avoid the use of `!important` at all costs. Exceptions to the rule:
+* [3.1](#3.1) Avoid the use of `!important` at all costs. Exceptions to the rule:
 	1. It's being used within a helper class;
 	2. You can explain its use.
 
-* Do not use ids.
+* [3.2](#3.2) Do not use ids.
 > They kill modularity and are not necessary for styling.
 
-* When defining a variable, make sure it has a default value by using `!default` provided by Sass.
+* [3.3](#3.3) When defining a variable, make sure it has a default value by using `!default` provided by Sass.
 > That way overriding variables is safer.
 
-* Do not manually add vendor prefixes.
+* [3.4](#3.4) Do not manually add vendor prefixes.
 > Our tooling should be able to handle this.
+
+* [3.5](#3.5) Do not use vendor-specific font rendering techniques.
+> They are not consistent, break constrast and typography rules.
+
+* [3.6](#3.6) Prefer `background` over `background-color` when possible.
+> Simply because it's a shorthand.
+
+* [3.7](#3.7) Do not use `pointer-events`.
+> It's not reliable and it's not CSS's role.
+
+* [3.8](#3.8) Avoid hard-coded magic numbers.
+> These are definitelly a code smell and make super hard to maintain.
+
+```scss
+// Bad
+.selector {
+  width: 73px; // WTF is 73px? Why?
+  z-index: 99999; // Brute force here, not good at all
+  margin-top: 128px; // Again, what the heck is this?
+}
+
+// Good (values actually make sense)
+.selector {
+  width: grid-columns(2);
+  z-index: $depth-screen-foreground;
+  margin-top: $selector-inner-padding;
+}
+```
+
+* [3.9](#3.9) Avoid undoing styles.
+> These are code smells and almost always have room for improvement.
+
+```scss
+// Bad
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+.no-border {
+
+  // Brute force resets down here
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+// Good
+h2 {
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.headline {
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+```
+
+* [3.10](#3.10) Prefer `em` over `px`.
+> This allows for a more flexible element sizing.
 
 **[⬆ back to top](#toc)**
 
 ## Colors
 
-* Hexadecimal values should always be in upper case.
+* [4.1](#4.1) Hexadecimal values should always be in upper case.
 
 > This approach improves code readability.
 
@@ -77,7 +139,7 @@
 }
 ```
 
-* Prefer shorthand notation.
+* [4.2](#4.2) Prefer shorthand notation.
 
 ```scss
 // Bad
@@ -93,7 +155,7 @@ $color: #FF6600;
 $color: #F60;
 ```
 
-* Do not use CSS color names.
+* [4.3](#4.3) Do not use CSS color names.
 
 > They're not consistently implemented on browsers.
 
@@ -113,7 +175,7 @@ $color: #F60;
 
 ## Numbers and units
 
-* Avoid specifying units for zero values.
+* [5.1](#5.1) Avoid specifying units for zero values.
 
 ```scss
 // Bad
@@ -127,7 +189,7 @@ $color: #F60;
 }
 ```
 
-* Do not use floating decimals.
+* [5.2](#5.2) Do not use floating decimals.
 
 > They do make code harder to read.
 
@@ -147,7 +209,7 @@ $color: #F60;
 }
 ```
 
-* Use `pt` units to declare `letter-spacing` values.
+* [5.3](#5.3) Use `pt` units to declare `letter-spacing` values.
 
 > We found it easier to match Photoshop visual specifications.
 
@@ -163,7 +225,7 @@ $color: #F60;
 }
 ```
 
-* Do not add units for `line-height` values.
+* [5.4](#5.4) Do not add units for `line-height` values.
 
 > Not doing so will break vertical rythm.
 
@@ -185,13 +247,13 @@ p {
 
 ## Inline assets
 
-* Inline assets are only allowed if they weight less than or equal to `1KB` and are presented only once in the code.
+* [6.1](#6.1) Inline assets are only allowed if they weight less than or equal to `1KB` and are presented only once in the code.
 
 **[⬆ back to top](#toc)**
 
 ## Pseudo elements
 
-* Use double collons `::` to access pseudo elements.
+* [7.1](#7.1) Use double collons `::` to access pseudo elements.
 
 ```scss
 // Bad
@@ -209,8 +271,8 @@ p {
 
 ## Specificity and nesting
 
-* Avoid overly-specific selectors by making use of good ol' classes.
-* Maximum of `3` levels of nesting.
+* [8.1](#8.1) Avoid overly-specific selectors by making use of good ol' classes.
+* [8.2](#8.2) Maximum of `3` levels of nesting.
 
 ```scss
 // Bad
@@ -251,9 +313,9 @@ p {
 
 ## Quotes
 
-* Use single quotes `'` for everything.
+* [9.1](#9.1) Use single quotes `'` for everything.
 
-* Always wrap values with quotes.
+* [9.2](#9.2) Always wrap values with quotes.
 
 > Even though some are not mandatory, it will enforce consistency.
 
@@ -285,7 +347,7 @@ input[type='radio'] {
 
 ## Comments
 
-* Following is an example of a well documented component following our standards.
+* [10.1](#10.1) Following is an example of a well documented component following our standards.
 
 ```scss
 /* ==========================================================================
@@ -293,7 +355,7 @@ input[type='radio'] {
    ========================================================================== */
 
 // Component theming properties
-$component-background-color: #FF0066 !default;
+$component-background-color: #F06 !default;
 $component-color: #FFF !default;
 
 // Set component's layout direction, which changes the way arrows are drawn
@@ -359,7 +421,7 @@ $component-direction: 'down' !default;
 
 ## Naming conventions
 
-* Use `hyphen-case` to name classes, variables, functions, mixins and placeholders.
+* [11.1](#11.1) Use `hyphen-case` to name classes, variables, functions, mixins and placeholders.
 
 ```scss
 // Bad
@@ -383,7 +445,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* Elements should have the base module name as a prefix and the name of the element, separated by double underscores `__`.
+* [11.2](#11.2) Elements should have the base module name as a prefix and the name of the element, separated by double underscores `__`.
 
 > The advantage of elements is to not rely on the markup to apply a certain style.
 
@@ -413,7 +475,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* Modifiers should have the base module name as a prefix and the name of the modifier, separated by double hyphens `--`.
+* [11.3](#11.3) Modifiers should have the base module name as a prefix and the name of the modifier, separated by double hyphens `--`.
 
 > Modifiers are also complementary, therefore a master/base class should exist to provide the visual foundation.
 
@@ -443,7 +505,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* States can be prefixed with `is`, `has` or `should`.
+* [11.4](#11.4) States can be prefixed with `is`, `has` or `should`.
 
 ```scss
 // Bad
@@ -497,11 +559,110 @@ $component-direction: 'down' !default;
 
 ## Whitespace
 
+* [13.1](#13.1) Add a space after selector definition.
+
+```scss
+// Bad
+.selector{content: 'foo';}
+
+// Good
+.selector { content: 'foo'; }
+```
+
+* [13.2](#13.2) Add a space between a rule and its value.
+
+```scss
+// Bad
+.button {
+  color:#FFF;
+  background:#F06;
+}
+
+// Bad
+.button {
+  color: #FFF;
+  background: #F06;
+}
+```
+
+* [13.3](#13.3) Add inner spaces to inline selectors.
+
+```scss
+// Bad
+.selector {content: 'foo';}
+
+// Good
+.selector { content: 'foo'; }
+```
+
+* [13.4](#13.4) If a selector has more than a single rule, break all the rules into new lines.
+
+> This will improve code readability.
+
+```scss
+// Bad
+.section { cursor: pointer; text-align: center; }
+
+// Good
+.section { cursor: default; }
+
+// Good
+.section {
+  text-align: left;
+  vertical-align: middle;
+}
+```
+
+* [13.5](#13.5) When targeting multiple selectors break each one in a new line.
+
+```scss
+// Bad
+.footer, .header, .main {
+  display: block;
+}
+
+// Good
+.footer,
+.header,
+.main {
+  margin: 0 auto;
+}
+```
+
+* [13.6](#13.6) Keep multiple rules in a single line but add a white space after each comma.
+
+```scss
+// Bad
+.box {
+  box-shadow: 0 1px 1px #eee,
+  inset 0 1px 0 #f00;
+}
+
+// Good
+.box {
+  box-shadow: 0 1px 1px #eee, inset 0 1px 0 #f00;
+}
+```
+
+* [13.7](#13.7) Add a white space after each comma on multiple values.
+
+```scss
+// Bad
+.selector {
+  background: rgba(0,0,0,0.5);
+}
+
+// Good
+.selector {
+  background: rgba(255, 255, 255, 0.75);
+}
+```
+
 **[⬆ back to top](#toc)**
 
 ## Organization
 
-* The order of rules declaration should look like the following.
+* [14.1](#14.1) The order of rules declaration should look like the following.
 	1. `@extend`
 	2. `@import`
 	3. Variable definitions
@@ -582,7 +743,7 @@ $component-direction: 'down' !default;
 
 ## Code linting
 
-* We use [SCSS-Lint](https://github.com/brigade/scss-lint) to lint our Sass code. All the rules can be found on the (`.scss-lint.yml`)[/linters/.scss-lint.yml] file.
+* [15.1](#15.1) We use [SCSS-Lint](https://github.com/brigade/scss-lint) to lint our Sass code. All the rules can be found on the (`.scss-lint.yml`)[/linters/.scss-lint.yml] file.
 
 **[⬆ back to top](#toc)**
 
@@ -598,6 +759,8 @@ $component-direction: 'down' !default;
 
 * [Code smells in CSS](http://csswizardry.com/2012/11/code-smells-in-css)
 * [More Transparent UI Code with Namespaces](http://csswizardry.com/2015/03/more-transparent-ui-code-with-namespaces)
-* [Unitless line-heights](http://meyerweb.com/eric/thoughts/2006/02/08/unitless-line-heights)
+* [Line-height units](http://tzi.fr/css/text/line-height-units#Unitless)
+* [Medium’s CSS is actually pretty f***ing good](https://medium.com/@fat/mediums-css-is-actually-pretty-fucking-good-b8e2a6c78b06)
+* [Why Ems?](https://css-tricks.com/why-ems)
 
 **[⬆ back to top](#toc)**
