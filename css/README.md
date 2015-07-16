@@ -549,11 +549,11 @@ $component-direction: 'down' !default;
 |---|---|---|
 | `c` | For user interface components | `c-dropdown` |
 | `ab` | For A/B testing stuff (usually removed and re-implemented once the test is done) | `ab-jira-ticket-42` |
-| `u` | For helper classes | `u-clearfix` |
-| `t` | For custom themes (that usually are going to be thrown away) | `t-black-friday` |
+| `u` | For utils | `u-clearfix` |
+| `t` | For custom themes | `t-black-friday` |
 | `_` | For hacks (that should be removed as soon as possible) | `_fix-dropdown-ie8` |
 | `is`, `has`, `should` | For component states | `is-disabled` |
-| `v` | For vendor services hooks (such as Optimizely, Crazy Egg, etc) | `v-optimizely` |
+| `v` | For vendor service hooks (such as Optimizely, Crazy Egg, etc) | `v-optimizely` |
 
 **[⬆ back to top](#toc)**
 
@@ -743,7 +743,7 @@ $component-direction: 'down' !default;
 
 ## Code linting
 
-* [15.1](#15.1) We use [SCSS-Lint](https://github.com/brigade/scss-lint) to lint our Sass code. All the rules can be found on the (`.scss-lint.yml`)[/linters/.scss-lint.yml] file.
+* [15.1](#15.1) We use [stylelint](http://stylelint.io) to lint our CSS code. All the rules can be found on the (`stylelint-config.js`)[/linters/stylelint-config.js] file.
 
 **[⬆ back to top](#toc)**
 
