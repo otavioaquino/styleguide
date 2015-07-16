@@ -599,6 +599,27 @@ function foo(bar) {
 }
 ```
 
+* [11.8](#11.8) Make use of bind when you need to persist the value of this accross different scopes.
+
+> It removes the need of creating a new variable.
+
+```javascript
+// Bad
+function foo() {
+  var self = this;
+  function bar() {
+    self.something();
+  }
+}
+
+// Good
+function foo() {
+  function bar() {
+    this.something();
+  }.bind(this);
+}
+```
+
 **[⬆ back to top](#toc)**
 
 ## Equality comparisons
@@ -842,38 +863,7 @@ var __name = 'Bar';
 var _name = 'Baz';
 ```
 
-* [16.5](#16.5) When making a reference to `this` name it as `self`.
-
-```javascript
-// Bad
-function() {
-  var that = this;
-
-  return function() {
-    console.log(that);
-  }
-}
-
-// Bad
-function() {
-  var _this = this;
-
-  return function() {
-    console.log(this);
-  }
-}
-
-// Good
-function() {
-  var self = this;
-
-  return function() {
-    console.log(self);
-  }
-}
-```
-
-* [16.6](#16.6) Booleans should start with "is", "has", or "should".
+* [16.5](#16.5) Booleans should start with "is", "has", or "should".
 
 > This give us a clear idea of what that variable is.
 
@@ -889,7 +879,7 @@ var isReady = true,
     hasAnimation = true;
 ```
 
-* [16.7](#16.7) When naming an acessor, start with `get` or `set`. Also always name the getter argument as `value`.
+* [16.6](#16.6) When naming an acessor, start with `get` or `set`. Also always name the getter argument as `value`.
 
 ```javascript
 var currentStatus;
@@ -913,7 +903,7 @@ function getStatus() {
 }
 ```
 
-* [16.8](#16.8) When naming an event handler, combine its action with the event type.
+* [16.7](#16.7) When naming an event handler, combine its action with the event type.
 
 > This way it's easier to spot if your function is doing too much.
 
