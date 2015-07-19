@@ -903,9 +903,7 @@ function getStatus() {
 }
 ```
 
-* [16.7](#16.7) When naming an event handler, combine its action with the event type.
-
-> This way it's easier to spot if your function is doing too much.
+* [16.7](#16.7) When naming an event handler, prefix `on` along with its event type.
 
 ```javascript
 // Bad
@@ -916,10 +914,10 @@ function click() {
 }
 
 // Good
-$('.button').click(toggleColorOnClick);
+$('.button').click(onClick);
 
-function toggleColorOnClick() {
-  console.log('should toggle color on click!');
+function onClick() {
+  // Stuff happens here
 }
 ```
 
