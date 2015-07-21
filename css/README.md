@@ -629,7 +629,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [13.6](#13.6) Keep multiple rules in a single line but add a white space after each comma.
+* [13.6](#13.6) Keep multiple rules in more than one line for better readability.
 
 ```scss
 // Bad
@@ -640,7 +640,13 @@ $component-direction: 'down' !default;
 
 // Good
 .box {
-  box-shadow: 0 1px 1px #eee, inset 0 1px 0 #f00;
+  box-shadow: 0 1px 1px #eee, 
+              0 1px 0   #f00 inset;
+  background: linear-gradient(
+              #1e5799 0%,
+              #2989d8 50%,
+              #207cca 51%,
+              #7db9e8 100%);
 }
 ```
 
