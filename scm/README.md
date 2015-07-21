@@ -156,6 +156,8 @@ git rebase -i HEAD~5 && git push
 git rebase -i feature/1755-social-links-on-footer && git push
 ```
 
+* [6.3](#6.3) The person who opened the pull request should be the one responsible for merging and closing it.
+
 ## Resources
 
 ### Tools
