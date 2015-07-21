@@ -22,13 +22,13 @@
 
 ## Preprocessor
 
-* [1.1](#1.1) [Sass](http://sass-lang.com) is our preprocessor of choice.
+* [1.1](#1.1) <a name='1.1'></a> [Sass](http://sass-lang.com) is our preprocessor of choice.
 
-* [1.2](#1.2) Limit the use of its features to only variables and mixins.
+* [1.2](#1.2) <a name='1.2'></a> Limit the use of its features to only variables and mixins.
 
 > Getting too crazy with Sass can lead to both terrible code maintenance and output.
 
-* [1.3](#1.3) `@extend` is allowed only when used with placeholders.
+* [1.3](#1.3) <a name='1.3'></a> `@extend` is allowed only when used with placeholders.
 
 > `@extend`ing classes can lead to terrible code output.
 
@@ -36,7 +36,7 @@
 
 ## Syntax
 
-* [2.1](#2.1) Use the Sassy CSS (SCSS) syntax.
+* [2.1](#2.1) <a name='2.1'></a> Use the Sassy CSS (SCSS) syntax.
 
 > Since regular CSS code is valid SCSS, it's a win-win.
 
@@ -44,29 +44,29 @@
 
 ## Best practices
 
-* [3.1](#3.1) Avoid the use of `!important` at all costs. Exceptions to the rule:
+* [3.1](#3.1) <a name='3.1'></a> Avoid the use of `!important` at all costs. Exceptions to the rule:
 	1. It's being used within a helper class;
 	2. You can explain its use.
 
-* [3.2](#3.2) Do not use ids.
+* [3.2](#3.2) <a name='3.2'></a> Do not use ids.
 > They kill modularity and are not necessary for styling.
 
-* [3.3](#3.3) When defining a variable, make sure it has a default value by using `!default` provided by Sass.
+* [3.3](#3.3) <a name='3.3'></a> When defining a variable, make sure it has a default value by using `!default` provided by Sass.
 > That way overriding variables is safer.
 
-* [3.4](#3.4) Do not manually add vendor prefixes.
+* [3.4](#3.4) <a name='3.4'></a> Do not manually add vendor prefixes.
 > Our tooling should be able to handle this.
 
-* [3.5](#3.5) Do not use vendor-specific font rendering techniques.
+* [3.5](#3.5) <a name='3.5'></a> Do not use vendor-specific font rendering techniques.
 > They are not consistent, break constrast and typography rules.
 
-* [3.6](#3.6) Prefer `background` over `background-color` when possible.
+* [3.6](#3.6) <a name='3.6'></a> Prefer `background` over `background-color` when possible.
 > Simply because it's a shorthand.
 
-* [3.7](#3.7) Do not use `pointer-events`.
+* [3.7](#3.7) <a name='3.7'></a> Do not use `pointer-events`.
 > It's not reliable and it's not CSS's role.
 
-* [3.8](#3.8) Avoid hard-coded magic numbers.
+* [3.8](#3.8) <a name='3.8'></a> Avoid hard-coded magic numbers.
 > These are definitelly a code smell and make super hard to maintain.
 
 ```scss
@@ -85,7 +85,7 @@
 }
 ```
 
-* [3.9](#3.9) Avoid undoing styles.
+* [3.9](#3.9) <a name='3.9'></a> Avoid undoing styles.
 > These are code smells and almost always have room for improvement.
 
 ```scss
@@ -116,14 +116,14 @@ h2 {
 }
 ```
 
-* [3.10](#3.10) Prefer `em` over `px`.
+* [3.10](#3.10) <a name='3.10'></a> Prefer `em` over `px`.
 > This allows for a more flexible element sizing.
 
 **[⬆ back to top](#toc)**
 
 ## Colors
 
-* [4.1](#4.1) Hexadecimal values should always be in upper case.
+* [4.1](#4.1) <a name='4.1'></a> Hexadecimal values should always be in upper case.
 
 > This approach improves code readability.
 
@@ -139,7 +139,7 @@ h2 {
 }
 ```
 
-* [4.2](#4.2) Prefer shorthand notation.
+* [4.2](#4.2) <a name='4.2'></a> Prefer shorthand notation.
 
 ```scss
 // Bad
@@ -155,7 +155,7 @@ $color: #FF6600;
 $color: #F60;
 ```
 
-* [4.3](#4.3) Do not use CSS color names.
+* [4.3](#4.3) <a name='4.3'></a> Do not use CSS color names.
 
 > They're not consistently implemented on browsers.
 
@@ -175,7 +175,7 @@ $color: #F60;
 
 ## Numbers and units
 
-* [5.1](#5.1) Avoid specifying units for zero values.
+* [5.1](#5.1) <a name='5.1'></a> Avoid specifying units for zero values.
 
 ```scss
 // Bad
@@ -189,7 +189,7 @@ $color: #F60;
 }
 ```
 
-* [5.2](#5.2) Do not use floating decimals.
+* [5.2](#5.2) <a name='5.2'></a> Do not use floating decimals.
 
 > They do make code harder to read.
 
@@ -209,7 +209,7 @@ $color: #F60;
 }
 ```
 
-* [5.3](#5.3) Use `pt` units to declare `letter-spacing` values.
+* [5.3](#5.3) <a name='5.3'></a> Use `pt` units to declare `letter-spacing` values.
 
 > We found it easier to match Photoshop visual specifications.
 
@@ -225,7 +225,7 @@ $color: #F60;
 }
 ```
 
-* [5.4](#5.4) Do not add units for `line-height` values.
+* [5.4](#5.4) <a name='5.4'></a> Do not add units for `line-height` values.
 
 > Not doing so will break vertical rythm.
 
@@ -247,13 +247,13 @@ p {
 
 ## Inline assets
 
-* [6.1](#6.1) Inline assets are only allowed if they weight less than or equal to `1KB` and are presented only once in the code.
+* [6.1](#6.1) <a name='6.1'></a> Inline assets are only allowed if they weight less than or equal to `1KB` and are presented only once in the code.
 
 **[⬆ back to top](#toc)**
 
 ## Pseudo elements
 
-* [7.1](#7.1) Use double collons `::` to access pseudo elements.
+* [7.1](#7.1) <a name='7.1'></a> Use double collons `::` to access pseudo elements.
 
 ```scss
 // Bad
@@ -271,8 +271,8 @@ p {
 
 ## Specificity and nesting
 
-* [8.1](#8.1) Avoid overly-specific selectors by making use of good ol' classes.
-* [8.2](#8.2) Maximum of `3` levels of nesting.
+* [8.1](#8.1) <a name='8.1'></a> Avoid overly-specific selectors by making use of good ol' classes.
+* [8.2](#8.2) <a name='8.2'></a> Maximum of `3` levels of nesting.
 
 ```scss
 // Bad
@@ -313,9 +313,9 @@ p {
 
 ## Quotes
 
-* [9.1](#9.1) Use single quotes `'` for everything.
+* [9.1](#9.1) <a name='9.1'></a> Use single quotes `'` for everything.
 
-* [9.2](#9.2) Always wrap values with quotes.
+* [9.2](#9.2) <a name='9.2'></a> Always wrap values with quotes.
 
 > Even though some are not mandatory, it will enforce consistency.
 
@@ -347,7 +347,7 @@ input[type='radio'] {
 
 ## Comments
 
-* [10.1](#10.1) Following is an example of a well documented component following our standards.
+* [10.1](#10.1) <a name='10.1'></a> Following is an example of a well documented component following our standards.
 
 ```scss
 /* ==========================================================================
@@ -421,7 +421,7 @@ $component-direction: 'down' !default;
 
 ## Naming conventions
 
-* [11.1](#11.1) Use `hyphen-case` to name classes, variables, functions, mixins and placeholders.
+* [11.1](#11.1) <a name='11.1'></a> Use `hyphen-case` to name classes, variables, functions, mixins and placeholders.
 
 ```scss
 // Bad
@@ -445,7 +445,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [11.2](#11.2) Elements should have the base module name as a prefix and the name of the element, separated by double underscores `__`.
+* [11.2](#11.2) <a name='11.2'></a> Elements should have the base module name as a prefix and the name of the element, separated by double underscores `__`.
 
 > The advantage of elements is to not rely on the markup to apply a certain style.
 
@@ -475,7 +475,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [11.3](#11.3) Modifiers should have the base module name as a prefix and the name of the modifier, separated by double hyphens `--`.
+* [11.3](#11.3) <a name='11.3'></a> Modifiers should have the base module name as a prefix and the name of the modifier, separated by double hyphens `--`.
 
 > Modifiers are also complementary, therefore a master/base class should exist to provide the visual foundation.
 
@@ -505,7 +505,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [11.4](#11.4) States can be prefixed with `is`, `has` or `should`.
+* [11.4](#11.4) <a name='11.4'></a> States can be prefixed with `is`, `has` or `should`.
 
 ```scss
 // Bad
@@ -559,7 +559,7 @@ $component-direction: 'down' !default;
 
 ## Whitespace
 
-* [13.1](#13.1) Add a space after selector definition.
+* [13.1](#13.1) <a name='13.1'></a> Add a space after selector definition.
 
 ```scss
 // Bad
@@ -569,7 +569,7 @@ $component-direction: 'down' !default;
 .selector { content: 'foo'; }
 ```
 
-* [13.2](#13.2) Add a space between a rule and its value.
+* [13.2](#13.2) <a name='13.2'></a> Add a space between a rule and its value.
 
 ```scss
 // Bad
@@ -585,7 +585,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [13.3](#13.3) Add inner spaces to inline selectors.
+* [13.3](#13.3) <a name='13.3'></a> Add inner spaces to inline selectors.
 
 ```scss
 // Bad
@@ -595,7 +595,7 @@ $component-direction: 'down' !default;
 .selector { content: 'foo'; }
 ```
 
-* [13.4](#13.4) If a selector has more than a single rule, break all the rules into new lines.
+* [13.4](#13.4) <a name='13.4'></a> If a selector has more than a single rule, break all the rules into new lines.
 
 > This will improve code readability.
 
@@ -613,7 +613,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [13.5](#13.5) When targeting multiple selectors break each one in a new line.
+* [13.5](#13.5) <a name='13.5'></a> When targeting multiple selectors break each one in a new line.
 
 ```scss
 // Bad
@@ -629,7 +629,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [13.6](#13.6) Keep multiple rules in a single line but add a white space after each comma.
+* [13.6](#13.6) <a name='13.6'></a> Keep multiple rules in a single line but add a white space after each comma.
 
 ```scss
 // Bad
@@ -644,7 +644,7 @@ $component-direction: 'down' !default;
 }
 ```
 
-* [13.7](#13.7) Add a white space after each comma on multiple values.
+* [13.7](#13.7) <a name='13.7'></a> Add a white space after each comma on multiple values.
 
 ```scss
 // Bad
@@ -662,7 +662,7 @@ $component-direction: 'down' !default;
 
 ## Organization
 
-* [14.1](#14.1) The order of rules declaration should look like the following.
+* [14.1](#14.1) <a name='14.1'></a> The order of rules declaration should look like the following.
 	1. `@extend`
 	2. `@import`
 	3. Variable definitions
@@ -743,7 +743,7 @@ $component-direction: 'down' !default;
 
 ## Code linting
 
-* [15.1](#15.1) We use [stylelint](http://stylelint.io) to lint our CSS code. All the rules can be found on the (`stylelint-config.js`)[/linters/stylelint-config.js] file.
+* [15.1](#15.1) <a name='15.1'></a> We use [stylelint](http://stylelint.io) to lint our CSS code. All the rules can be found on the (`stylelint-config.js`)[/linters/stylelint-config.js] file.
 
 **[⬆ back to top](#toc)**
 
