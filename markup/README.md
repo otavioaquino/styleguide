@@ -5,20 +5,20 @@
 ## TOC
 
 1. Syntax
-1. Doctype
-2. Language attribute
+2. Doctype
+3. Language attribute
 4. Encoding
-3. IE compatibility mode
-5. CSS and JavaScript includes
-6. Organization
-7. Boolean attributes
+5. IE compatibility mode
+6. CSS and JavaScript includes
+7. Organization
+8. Boolean attributes
 9. JavaScript hooks
-8. Whitespace
-8. Resources
+10. Whitespace
+11. Resources
 
 ## Syntax
 
-* Always use single quotes `'`.
+* [1.1](#1.1) Always use single quotes `'`.
 
 ```html
 <!-- Bad -->
@@ -31,7 +31,7 @@
 <div id='foo'></div>
 ```
 
-* Always close self closing tags with a slash `/`.
+* [1.2](#1.2) Always close self closing tags with a slash `/`.
 
 ```html
 <!-- Bad -->
@@ -47,7 +47,7 @@
 <img src='path/to/image.png' />
 ```
 
-* Always close optional closing tags.
+* [1.3](#1.3) Always close optional closing tags.
 
 ```html
 <!-- Bad -->
@@ -69,7 +69,7 @@
 
 ## Doctype
 
-* Follow HTML5 doctype to enforce standards and a more consistent rendering.
+* [2.1](#2.1) Follow HTML5 doctype to enforce standards and a more consistent rendering.
 
 ```html
 <!doctype html>
@@ -83,7 +83,7 @@
 
 ## Language attribute
 
-* Always specify a language for documents.
+* [3.1](#3.1) Always specify a language for documents.
 
 ```html
 <html lang='en-us'>
@@ -95,7 +95,7 @@
 
 ## Encoding
 
-* Use `utf-8` as de default encoding of HTML documents.
+* [4.1](#4.1) Use `utf-8` as de default encoding of HTML documents.
 
 ```html
 <head>
@@ -107,7 +107,7 @@
 
 ## IE compatibility mode
 
-* Internet Explorer supports the use of a document compatibility `<meta>` tag to specify what version of IE the page should be rendered. You should force edge mode.
+* [5.1](#5.1) Internet Explorer supports the use of a document compatibility `<meta>` tag to specify what version of IE the page should be rendered. You should force edge mode.
 
 ```html
 <meta http-equiv='X-UA-Compatible' content='IE=Edge'>
@@ -117,7 +117,7 @@
 
 ## CSS and JavaScript includes
 
-* There's no need to specify the `type` attribute of include tags.
+* [6.1](#6.1) There's no need to specify the `type` attribute of include tags.
 
 ```html
 <!-- External CSS -->
@@ -136,7 +136,7 @@
 
 ## Organization
 
-* The order of rules declaration should look like the following.
+* [7.1](#7.1) The order of rules declaration should look like the following.
   1. `id` and `name`
   2. Generic classes (utils, typography, grid and so on)
   3. Specific classes
@@ -153,7 +153,7 @@
 
 ## Boolean attributes
 
-* Do not add values to boolean attributes.
+* [8.1](#8.1) Do not add values to boolean attributes.
 
 ```html
 <!-- Bad -->
@@ -173,13 +173,13 @@
 
 ## JavaScript hooks
 
-* JavaScript hooks should be declared as `component` data attribute.
+* [9.1](#9.1) JavaScript hooks should be declared as `component` data attribute.
 
 ```html
 <button class='c-button c-button--big' data-component='buy-it-button'>Buy it</button>
 ```
 
-* Always use `parameters` data attribute for component parameters following the literal object syntax.
+* [9.2](#9.2) Always use `parameters` data attribute for component parameters following the literal object syntax.
 
 ```html
 <div class='c-carousel' data-component='carousel' data-parameters='{direction: "left-to-right", speed: 2.5, easing: "easeOutExpo"}'>
@@ -191,11 +191,11 @@
 
 ## Whitespace
 
-* Use soft tabs set to `2` spaces and never mix spaces with tabs.
+* [10.1](#10.1) Use soft tabs set to `2` spaces and never mix spaces with tabs.
 
-* Always add an empty line at the end of your file.
+* [10.2](#10.2) Always add an empty line at the end of your file.
 
-* Break multiple attributes in new lines when needed.
+* [10.3](#10.3) Break multiple attributes in new lines when needed.
 
 ```html
 <div
@@ -207,7 +207,7 @@
 </div>
 ```
 
-* When closing self closing tags, always add a single space before `/>`.
+* [10.4](#10.4) When closing self closing tags, always add a single space before `/>`.
 
 ```html
 <!-- Bad -->
@@ -223,6 +223,7 @@
 
 ### Inspiration
 
+* [Magnetis Front-End Styleguide](https://github.com/magnetis/styleguide)
 * [Code Guide by @mdo](http://codeguide.co)
 * [Harry Roberts coding style](http://csswizardry.com/2012/04/my-html-css-coding-style)
 
