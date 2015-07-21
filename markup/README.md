@@ -4,17 +4,17 @@
 
 ## TOC
 
-1. Syntax
-2. Doctype
-3. Language attribute
-4. Encoding
-5. IE compatibility mode
-6. CSS and JavaScript includes
-7. Organization
-8. Boolean attributes
-9. JavaScript hooks
-10. Whitespace
-11. Resources
+1. [Syntax](#syntax)
+2. [Doctype](#doctype)
+3. [Language attribute](#language-attribute)
+4. [Encoding](#encoding)
+5. [IE compatibility mode](#ie-compatibility-mode)
+6. [CSS and JavaScript includes](#css-and-javascript-includes)
+7. [Organization](#organization)
+8. [Boolean attributes](#boolean-attributes)
+9. [JavaScript hooks](#javascript-hooks)
+10. [Whitespace](#whitespace)
+11. [Resources](#resources)
 
 ## Syntax
 
