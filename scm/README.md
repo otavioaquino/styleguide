@@ -108,7 +108,7 @@ git commit tests -m '[FEATURE] Added test specs for JSON parser.'
 
 > Feature branches are simple and effective. Avoid touching the `master` branch.
 
-* [5.2](#5.2) Branches should be named as their [change type](#change-type), followed by their [JIRA](https://www.atlassian.com/software/jira) ticked id and the feature title (lower hypen-case and in the present tense).
+* [5.2](#5.2) Branches should be named as their [change type](#change-type), followed by their feature title (lower hypen-case and in the present tense) and then their [JIRA](https://www.atlassian.com/software/jira) ticket id.
 
 > We found this to be an easy way to consolidate our agile workflow with the way we ship code.
 
@@ -117,13 +117,13 @@ git commit tests -m '[FEATURE] Added test specs for JSON parser.'
 git checkout -b fixed-analytics
 
 # Good
-git checkout -b fix/1345-fix-analytics-implementation
+git checkout -b fix/fix-analytics-implementation-1345
 
 # Bad
 git checkout -b SideBarEnhancements
 
 # Good
-git checkout -b refactor/4053-sidebar
+git checkout -b refactor/sidebar-4055
 ```
 
 ## Fetching, merging and pushing
