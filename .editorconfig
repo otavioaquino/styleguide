@@ -1,4 +1,10 @@
-# editorconfig.org
+#
+# EditorConfig configuration file for Netshoes projects
+# https://github.com/netshoes
+#
+# A full description of all rules presented here can be found at EditorConfig's website
+# http://editorconfig.org
+#
 
 root = true
 
@@ -10,3 +16,9 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
+[*.md]
+trim_trailing_whitespace = false
+
+[Makefile]
+indent_style = tab
+indent_size = 4
