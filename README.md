@@ -25,11 +25,11 @@ All the standards proposed here are based on our own experience writing code and
 
 If you have something you want to add, remove or improve, feel free to [open an issue](https://github.com/netshoes/styleguide/issues/new) and ping the team.
 
-![Netshoes](./netshoes.png)
-
 ## Credits
 
 Created and maintened by [a whole bunch of great people at Netshoes](https://github.com/orgs/netshoes/people).
+
+![Netshoes](./netshoes.png)
 
 ## License
 
