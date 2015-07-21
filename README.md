@@ -30,4 +30,4 @@ Created and maintened by [a whole bunch of great people at Netshoes](https://git
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT).
+MIT © [Netshoes](http://netshoes.com.br)
