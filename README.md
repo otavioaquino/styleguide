@@ -14,11 +14,12 @@ All the standards proposed here are based on our own experience writing code and
 
 ## Topics
 
+* [Best practices](/best-practices/README.md)
+* [SCM](scm/README.md)
+* [Code Review](code-review/README.md)
 * [JavaScript](/javascript/README.md)
 * [CSS](css/README.md)
 * [Markup](markup/README.md)
-* [Code Review](code-review/README.md)
-* [SCM](scm/README.md)
 
 ## Contributing
 
