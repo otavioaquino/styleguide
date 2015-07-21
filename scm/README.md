@@ -169,3 +169,5 @@ git rebase -i feature/1755-social-links-on-footer && git push
 * [5 Useful Tips For A Better Commit Message](https://robots.thoughtbot.com/5-useful-tips-for-a-better-commit-message)
 * [Git merge vs. rebase](http://mislav.uniqpath.com/2013/02/merge-vs-rebase)
 * [Alterando seus commits com rebase](http://www.raphaelfabeni.com.br/git-alterando-commits-parte-1) (pt-br)
+
+**[⬆ back to top](#toc)**
