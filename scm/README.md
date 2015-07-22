@@ -14,17 +14,17 @@
 
 ## Git
 
-* [1.1](#1.1) We use [Git](https://git-scm.com) as our SCM.
+* [1.1](#1.1) <a name='1.1'></a> We use [Git](https://git-scm.com) as our SCM.
 
 ## Configuration
 
-* [2.1](#2.1) Always have `* text=auto` set on [`.gitattributes`](./.gitattributes).
+* [2.1](#2.1) <a name='2.1'></a> Always have `* text=auto` set on [`.gitattributes`](./.gitattributes).
 
 > It ensures line endings are normalized.
 
 ## Change type
 
-> [3.1](#3.1) We use a range of change types to easily identify and differentiate changes.
+> [3.1](#3.1) <a name='3.1'></a> We use a range of change types to easily identify and differentiate changes.
 
 | Prefix | Description |
 |---|---|
@@ -35,7 +35,7 @@
 
 ## Commits
 
-* [4.1](#4.1) Write meaningful and straightforward commit summaries.
+* [4.1](#4.1) <a name='4.1'></a> Write meaningful and straightforward commit summaries.
 
 ```sh
 # Bad
@@ -45,7 +45,7 @@ git commit assets -m 'changed something' # ORLY? What have you changed?
 git commit assets -m 'Switched `reset.css` to `normalize.css`.'
 ```
 
-* [4.2](#4.2) Avoid long commit summaries by limiting the maximum characters to `50`.
+* [4.2](#4.2) <a name='4.2'></a> Avoid long commit summaries by limiting the maximum characters to `50`.
 
 > Detailed descriptions should go on the commit message.
 
@@ -57,7 +57,7 @@ git commit assets/javascripts -m 'Added `FIXME` note to dropdown module because 
 git commit assets/javascripts -m 'Added `FIXME` note to dropdown module.'
 ```
 
-* [4.3](#4.3) Write commit summaries in the past tense.
+* [4.3](#4.3) <a name='4.3'></a> Write commit summaries in the past tense.
 
 > By the time you commit something, the change is already there.
 
@@ -75,7 +75,7 @@ git commit scripts -m 'Fixing CI integration.'
 git commit scripts -m 'Fixed CI integration.'
 ```
 
-* [4.4](#4.4) Use proper english writing on commits.
+* [4.4](#4.4) <a name='4.4'></a> Use proper english writing on commits.
 
 > Because SCM is also code documentation.
 
@@ -90,7 +90,7 @@ git commit assets/stylesheets -m 'UPDATED CLEARFIX'
 git commit assets/stylesheets -m 'Updated clearfix implementation to use a more modern approach.'
 ```
 
-* [4.5](#4.5) Prefix commit summaries with the [change type](#change-type) in upper case wrapped within `[]`.
+* [4.5](#4.5) <a name='4.5'></a> Prefix commit summaries with the [change type](#change-type) in upper case wrapped within `[]`.
 
 > This is specially useful for filtering commit entries and measuring our work.
 
@@ -104,11 +104,11 @@ git commit tests -m '[FEATURE] Added test specs for JSON parser.'
 
 ## Branches
 
-* [5.1](#5.1) Always work inside a feature branch.
+* [5.1](#5.1) <a name='5.1'></a> Always work inside a feature branch.
 
 > Feature branches are simple and effective. Avoid touching the `master` branch.
 
-* [5.2](#5.2) Branches should be named as their [change type](#change-type), followed by their feature title (lower hypen-case and in the present tense) and then their [JIRA](https://www.atlassian.com/software/jira) ticket id.
+* [5.2](#5.2) <a name='5.2'></a> Branches should be named as their [change type](#change-type), followed by their feature title (lower hypen-case and in the present tense) and then their [JIRA](https://www.atlassian.com/software/jira) ticket id.
 
 > We found this to be an easy way to consolidate our agile workflow with the way we ship code.
 
@@ -128,7 +128,7 @@ git checkout -b refactor/sidebar-4055
 
 ## Fetching, merging and pushing
 
-* [6.1](#6.1) When fetching from remote, prefer rebase instead of the default merge.
+* [6.1](#6.1) <a name='6.1'></a> When fetching from remote, prefer rebase instead of the default merge.
 
 > Git's merge creates meaningless micro merge commits. Our commit history should make sense.
 
@@ -140,7 +140,7 @@ git pull
 git pull --rebase
 ```
 
-* [6.2](#6.2) Always review your commits with interactive rebase before pushing your changes.
+* [6.2](#6.2) <a name='6.2'></a> Always review your commits with interactive rebase before pushing your changes.
 
 > This is like your own code review. You're responsible for maintaining a great commit history.
 
@@ -156,7 +156,7 @@ git rebase -i HEAD~5 && git push
 git rebase -i feature/1755-social-links-on-footer && git push
 ```
 
-* [6.3](#6.3) The person who opened the pull request should be the one responsible for merging and closing it.
+* [6.3](#6.3) <a name='6.3'></a> The person who opened the pull request should be the one responsible for merging and closing it.
 
 ## Resources
 

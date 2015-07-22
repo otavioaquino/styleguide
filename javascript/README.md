@@ -27,11 +27,11 @@
 
 ## Semicolons
 
-* [1.1](#1.1) Always use semicolons.
+* [1.1](#1.1) <a name='1.1'></a> Always use semicolons.
 
 > [ASI](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#Automatic_semicolon_insertion) can be tricky, don't rely on it.
 
-* [1.2](#1.2) Don't start function blocks nor annonymous self-invoking functions with semicolons.
+* [1.2](#1.2) <a name='1.2'></a> Don't start function blocks nor annonymous self-invoking functions with semicolons.
 
 ```javascript
 // Bad
@@ -49,7 +49,7 @@
 
 ## Strict mode
 
-* [2.1](#2.1) Make use of the strict mode pragma.
+* [2.1](#2.1) <a name='2.1'></a> Make use of the strict mode pragma.
 
 > Just be aware not to use it globally.
 
@@ -85,7 +85,7 @@ function doSomething() {
 
 ## Variables
 
-* [3.1](#3.1) Always use `var` to declare variables.
+* [3.1](#3.1) <a name='3.1'></a> Always use `var` to declare variables.
 
 > Not doing so will result in global variables. We want to avoid polluting the global namespace.
 
@@ -97,7 +97,7 @@ superPower = new SuperPower();
 var superPower = new SuperPower();
 ```
 
-* [3.2](#3.2) Use one `var` declaration per variable.
+* [3.2](#3.2) <a name='3.2'></a> Use one `var` declaration per variable.
 
 > This allows for better debuggability and [avoid some annoying problems](http://benalman.com/news/2012/05/multiple-var-statements-javascript).
 
@@ -113,7 +113,7 @@ var bar = 2;
 var baz = 3;
 ```
 
-* [3.3](#3.3) Declare unassigned variables last.
+* [3.3](#3.3) <a name='3.3'></a> Declare unassigned variables last.
 
 > This is helpful when later on you might need to assign a variable depending on one of the previous assigned variables.
 
@@ -131,7 +131,7 @@ var bar;
 var baz;
 ```
 
-* [3.4](#3.4) Assign variables at the top of their scope.
+* [3.4](#3.4) <a name='3.4'></a> Assign variables at the top of their scope.
 
 > This helps avoid issues with variable declaration and assignment hoisting related issues.
 
@@ -196,7 +196,7 @@ function() {
 }
 ```
 
-* [3.5](#3.5) Use `||` to define default values.
+* [3.5](#3.5) <a name='3.5'></a> Use `||` to define default values.
 
 ```javascript
 // Bad
@@ -218,7 +218,7 @@ function setNumber(value) {
 
 ## Prototypes
 
-* [4.1](#4.1) Hacking native prototypes should be avoided at all costs, use a method instead.
+* [4.1](#4.1) <a name='4.1'></a> Hacking native prototypes should be avoided at all costs, use a method instead.
 
 ```javascript
 // Bad
@@ -232,7 +232,7 @@ function half(text) {
 }
 ```
 
-* [4.2](#4.2) Don't instantiate an object unless you assign it to a variable and use it.
+* [4.2](#4.2) <a name='4.2'></a> Don't instantiate an object unless you assign it to a variable and use it.
 
 > Not doing so configures a code smell and means that the constructor should be replaced with a function that doesn't require `new` to be used.
 
@@ -254,7 +254,7 @@ Person.create();
 
 ## Regular Expressions
 
-* [5.1](#5.1) Keep regular expressions in variables, don't use them inline.
+* [5.1](#5.1) <a name='5.1'></a> Keep regular expressions in variables, don't use them inline.
 
 > This will vastly improve readability.
 
@@ -276,7 +276,7 @@ if (matchNumbers.test(text)) {
 
 ## Objects
 
-* [6.1](#6.1) Use the literal syntax for object creation.
+* [6.1](#6.1) <a name='6.1'></a> Use the literal syntax for object creation.
 
 ```javascript
 // Bad
@@ -286,7 +286,7 @@ var foo = new Object();
 var bar = {};
 ```
 
-* [6.2](#6.2) Do not use [reserved words](http://es5.github.io/#x7.6.1) as object keys.
+* [6.2](#6.2) <a name='6.2'></a> Do not use [reserved words](http://es5.github.io/#x7.6.1) as object keys.
 
 > They can cause problems in older versions of IE if not wrapped within quotes.
 
@@ -304,7 +304,7 @@ var baz = {
 };
 ```
 
-* [6.3](#6.3) Use `camelCase` when naming object keys.
+* [6.3](#6.3) <a name='6.3'></a> Use `camelCase` when naming object keys.
 
 > This way is easier to use dot notation to access object values.
 
@@ -330,7 +330,7 @@ var user = {
 
 ## Properties
 
-* [7.1](#7.1) Use dot notation to access properties.
+* [7.1](#7.1) <a name='7.1'></a> Use dot notation to access properties.
 
 > Dot notation is simpler and enforces `camelCase` when naming object keys.
 
@@ -351,7 +351,7 @@ var userAge = user.age;
 
 ## Arrays
 
-* [8.1](#8.1) Use the literal syntax for array creation.
+* [8.1](#8.1) <a name='8.1'></a> Use the literal syntax for array creation.
 
 ```javascript
 // Bad
@@ -361,7 +361,7 @@ var foo = new Array();
 var bar = [1, 2, 3];
 ```
 
-* [8.2](#8.2) Use `Array#push` instead of direct assignment to add items to an array.
+* [8.2](#8.2) <a name='8.2'></a> Use `Array#push` instead of direct assignment to add items to an array.
 
 ```javascript
 var groceries = [];
@@ -373,7 +373,7 @@ groceries[groceries.length] = 'tomato';
 groceries.push('oreo');
 ```
 
-* [8.3](#8.3) To cleanup an array set its length to zero.
+* [8.3](#8.3) <a name='8.3'></a> To cleanup an array set its length to zero.
 
 ```javascript
 // Bad
@@ -385,7 +385,7 @@ var bar = [2, 4, 6];
 bar.length = 0;
 ```
 
-* [8.4](#8.4) Use `Array#slice` to clone an array.
+* [8.4](#8.4) <a name='8.4'></a> Use `Array#slice` to clone an array.
 
 ```javascript
 var total = items.length,
@@ -401,7 +401,7 @@ for (index = 0; index < total; index++) {
 itemsCopy = items.slice();
 ```
 
-* [8.5](#8.5) To convert an array-like object to an array, use `Array#slice`.
+* [8.5](#8.5) <a name='8.5'></a> To convert an array-like object to an array, use `Array#slice`.
 
 ```javascript
 function argsToArray() {
@@ -413,7 +413,7 @@ function argsToArray() {
 
 ## Strings
 
-* [9.1](#9.1) Use single quotes `'` for strings.
+* [9.1](#9.1) <a name='9.1'></a> Use single quotes `'` for strings.
 
 ```javascript
 // Bad
@@ -423,7 +423,7 @@ var reject = "Hugo Bessa";
 var god = 'Raphael Fabeni';
 ```
 
-* [9.2](#9.2) Concatenate strings using the plus `+=` operator.
+* [9.2](#9.2) <a name='9.2'></a> Concatenate strings using the plus `+=` operator.
 
 > Operators are faster than function calls.
 
@@ -437,7 +437,7 @@ name.concat('Javiani');
 name += ' Javiani';
 ```
 
-* [9.3](#9.3) Prefer string concatenation for long strings, always adding line breaks after an operator.
+* [9.3](#9.3) <a name='9.3'></a> Prefer string concatenation for long strings, always adding line breaks after an operator.
 
 > Long strings can impact performance big time ([benchmark](http://jsperf.com/ya-string-concat) and [discussion](https://github.com/airbnb/javascript/issues/40)).
 
@@ -457,7 +457,7 @@ var errorMessage = 'This is a super long error that was thrown because ' +
   'with this, you would get nowhere fast.';
 ```
 
-* [9.4](#9.4) Use `toString()` to convert a value to `String`.
+* [9.4](#9.4) <a name='9.4'></a> Use `toString()` to convert a value to `String`.
 
 > Be aware that `toString()` does **not** work with `null` and `undefined` values.
 
@@ -475,7 +475,7 @@ value.toString(); // '42'
 
 ## Numbers
 
-* [10.1](#10.1) Do not use floating decimals.
+* [10.1](#10.1) <a name='10.1'></a> Do not use floating decimals.
 
 > Althought they're valid JavaScript, they make the code harder to read.
 
@@ -495,7 +495,7 @@ var baz = 2.0;
 
 ## Functions
 
-* [11.1](#11.1) Always use the [function declaration form](http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname) instead of function expressions.
+* [11.1](#11.1) <a name='11.1'></a> Always use the [function declaration form](http://stackoverflow.com/questions/336859/var-functionname-function-vs-function-functionname) instead of function expressions.
 
 ```javascript
 // Bad
@@ -509,7 +509,7 @@ function sum(x, y) {
 }
 ```
 
-* [11.2](#11.2) Favor named function expression instead of anonymous function expression.
+* [11.2](#11.2) <a name='11.2'></a> Favor named function expression instead of anonymous function expression.
 
 > This helps you to debug your code, since the dev tools will show the name of the context which the error has ocurred.
 
@@ -521,7 +521,7 @@ var anonymous = function() {}
 var named = function named() {}
 ```
 
-* [11.3](#11.3) Do not declare a function in a non-function block.
+* [11.3](#11.3) <a name='11.3'></a> Do not declare a function in a non-function block.
 
 ```javascript
 // Just don't
@@ -532,7 +532,7 @@ while(true) {
 }
 ```
 
-* [11.4](#11.4) Do not name a parameter `arguments`.
+* [11.4](#11.4) <a name='11.4'></a> Do not name a parameter `arguments`.
 
 > This will take precedence over the `arguments` object that is given to every function scope.
 
@@ -548,7 +548,7 @@ function yup(name, options, args) {
 }
 ```
 
-* [11.5](#11.5) Whenever you have more than `3` arguments being passed to a function use an object instead.
+* [11.5](#11.5) <a name='11.5'></a> Whenever you have more than `3` arguments being passed to a function use an object instead.
 
 ```javascript
 // Bad
@@ -575,7 +575,7 @@ setUser({
 });
 ```
 
-* [11.6](#11.6) Use `Function()` as no-op.
+* [11.6](#11.6) <a name='11.6'></a> Use `Function()` as no-op.
 
 ```javascript
 function(callback) {
@@ -583,7 +583,7 @@ function(callback) {
 }
 ```
 
-* [11.7](#11.7) Do not modify function parameter values.
+* [11.7](#11.7) <a name='11.7'></a> Do not modify function parameter values.
 
 > Often, assignment to function parameters is unintended and indicative of a mistake or programmer error.
 
@@ -599,7 +599,7 @@ function foo(bar) {
 }
 ```
 
-* [11.8](#11.8) Make use of bind when you need to persist the value of this accross different scopes.
+* [11.8](#11.8) <a name='11.8'></a> Make use of bind when you need to persist the value of this accross different scopes.
 
 > It removes the need of creating a new variable.
 
@@ -624,7 +624,7 @@ function foo() {
 
 ## Equality comparisons
 
-* [12.1](#12.1) Use strict equality to compare variable values
+* [12.1](#12.1) <a name='12.1'></a> Use strict equality to compare variable values
 
 > Strict equality checks for both value and type which is why we expect.
 
@@ -632,7 +632,7 @@ function foo() {
 
 ## Conditionals
 
-* [13.1](#13.1) Ternary operators should only be used to compare booleans.
+* [13.1](#13.1) <a name='13.1'></a> Ternary operators should only be used to compare booleans.
 
 ```javascript
 // Bad
@@ -653,7 +653,7 @@ var shouldHide = isEmpty && isFoo;
 shouldHide ? hide() : show();
 ```
 
-* [13.2](#13.2) Don't use double negation `!!` to test booleans.
+* [13.2](#13.2) <a name='13.2'></a> Don't use double negation `!!` to test booleans.
 
 ```javascript
 // Bad
@@ -669,7 +669,7 @@ if(foo) {
 
 ## Blocks
 
-* [14.1](#14.1) Always wrap blocks within braces and embrace new lines.
+* [14.1](#14.1) <a name='14.1'></a> Always wrap blocks within braces and embrace new lines.
 
 ```javascript
 // Bad
@@ -705,13 +705,13 @@ while(true) {
 
 ## Comments
 
-* [15.1](#15.1) Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose.
+* [15.1](#15.1) <a name='15.1'></a> Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose.
 
-* [15.2](#15.2) Using `FIXME` and `TODO` tags can help other developers understand and maintain your code. In multiline comments, add a line break and place them at the end of the comment.
+* [15.2](#15.2) <a name='15.2'></a> Using `FIXME` and `TODO` tags can help other developers understand and maintain your code. In multiline comments, add a line break and place them at the end of the comment.
 
-* [15.3](#15.3) Use documentation block syntax for multiline comments.
+* [15.3](#15.3) <a name='15.3'></a> Use documentation block syntax for multiline comments.
 
-* [15.4](#15.4) Use `//` for single line comments. Place them on a newline above the subject of the comment and add an empty line before the comment.
+* [15.4](#15.4) <a name='15.4'></a> Use `//` for single line comments. Place them on a newline above the subject of the comment and add an empty line before the comment.
 
 ```javascript
 // Bad
@@ -779,7 +779,7 @@ function bootstrap() {
 
 ## Naming conventions
 
-* [16.1](#16.1) Use `PascalCase` when naming constructors.
+* [16.1](#16.1) <a name='16.1'></a> Use `PascalCase` when naming constructors.
 
 ```javascript
 // Bad
@@ -799,7 +799,7 @@ function CrewMember(name, role) {
 var designer = new CrewMember('Vinicius', 'Designer');
 ```
 
-* [16.2](#16.2) Avoid single letter names and abbreviations. Be descriptive and clear.
+* [16.2](#16.2) <a name='16.2'></a> Avoid single letter names and abbreviations. Be descriptive and clear.
 
 ```javascript
 // Bad
@@ -839,7 +839,7 @@ function initialize() {
 }
 ```
 
-* [16.3](#16.3) Always close constructor invocations with parenthesis.
+* [16.3](#16.3) <a name='16.3'></a> Always close constructor invocations with parenthesis.
 
 > It's going to be easier to pass new constructor values if needed in the future.
 
@@ -852,7 +852,7 @@ var bar = new FooBar();
 var baz = new FooBar(1, 'lorem');
 ```
 
-* [16.4](#16.4) Always use a leading underscore `_` when naming private properties and methods.
+* [16.4](#16.4) <a name='16.4'></a> Always use a leading underscore `_` when naming private properties and methods.
 
 ```javascript
 // Bad
@@ -863,7 +863,7 @@ var __name = 'Bar';
 var _name = 'Baz';
 ```
 
-* [16.5](#16.5) Booleans should start with "is", "has", or "should".
+* [16.5](#16.5) <a name='16.5'></a> Booleans should start with "is", "has", or "should".
 
 > This give us a clear idea of what that variable is.
 
@@ -879,7 +879,7 @@ var isReady = true,
     hasAnimation = true;
 ```
 
-* [16.6](#16.6) When naming an acessor, start with `get` or `set`. Also always name the getter argument as `value`.
+* [16.6](#16.6) <a name='16.6'></a> When naming an acessor, start with `get` or `set`. Also always name the getter argument as `value`.
 
 ```javascript
 var currentStatus;
@@ -903,7 +903,7 @@ function getStatus() {
 }
 ```
 
-* [16.7](#16.7) When naming an event handler, prefix `on` along with its event type.
+* [16.7](#16.7) <a name='16.7'></a> When naming an event handler, prefix `on` along with its event type.
 
 ```javascript
 // Bad
@@ -925,7 +925,7 @@ function onClick() {
 
 ## Whitespace
 
-* [17.1](#17.1) Use soft tabs set to `2` spaces and never mix spaces with tabs.
+* [17.1](#17.1) <a name='17.1'></a> Use soft tabs set to `2` spaces and never mix spaces with tabs.
 
 ```javascript
 // Bad
@@ -949,7 +949,7 @@ function() {
 }
 ```
 
-* [17.2](#17.2) Always add an empty line at the end of your file.
+* [17.2](#17.2) <a name='17.2'></a> Always add an empty line at the end of your file.
 
 ```javascript
 (function() {
@@ -959,7 +959,7 @@ function() {
 ↵
 ```
 
-* [17.3](#17.3) Place a space before and after conditions and loop declarations.
+* [17.3](#17.3) <a name='17.3'></a> Place a space before and after conditions and loop declarations.
 
 ```javascript
 // Bad
@@ -979,7 +979,7 @@ while (false) {
 }
 ```
 
-* [17.4](#17.4) Set off operators with spaces.
+* [17.4](#17.4) <a name='17.4'></a> Set off operators with spaces.
 
 ```javascript
 // Bad
@@ -989,7 +989,7 @@ var x=y+5;
 var x = y + 5;
 ```
 
-* [17.5](#17.5) Place a space after loop steps.
+* [17.5](#17.5) <a name='17.5'></a> Place a space after loop steps.
 
 ```javascript
 // Bad
@@ -1003,7 +1003,7 @@ for (var i = 0; i < 42; ++i) {
 }
 ```
 
-* [17.6](#17.6) Place a space after each function argument.
+* [17.6](#17.6) <a name='17.6'></a> Place a space after each function argument.
 
 ```javascript
 // Bad
@@ -1015,7 +1015,7 @@ function setUser(name, surname, age) {
 }
 ```
 
-* [17.7](#17.7) Objects properties should be split into new lines.
+* [17.7](#17.7) <a name='17.7'></a> Objects properties should be split into new lines.
 
 ```javascript
 // Bad
@@ -1037,7 +1037,7 @@ var setup = {
 }
 ```
 
-* [17.8](#17.8) Use indentation when making long method chains.
+* [17.8](#17.8) <a name='17.8'></a> Use indentation when making long method chains.
 
 ```javascript
 // Bad
@@ -1056,7 +1056,7 @@ $('.js-items')
 
 ## jQuery
 
-* [18.1](#18.1) Always cache jQuery lookups.
+* [18.1](#18.1) <a name='18.1'></a> Always cache jQuery lookups.
 
 ```javascript
 // Bad
@@ -1071,11 +1071,11 @@ $item
   .addClass('is-disabled');
 ```
 
-* [18.2](#18.2) Prefer `remove()` over `empty()`.
+* [18.2](#18.2) <a name='18.2'></a> Prefer `remove()` over `empty()`.
 
 > `remove()` is faster because it doesn't completely rewrite the DOM node.
 
-* [18.3](#18.3) Always favor jQuery helpers over third-party and custom stuff.
+* [18.3](#18.3) <a name='18.3'></a> Always favor jQuery helpers over third-party and custom stuff.
 
 ```javascript
 // Bad (importing Underscore/LoDash just to use `_.bind()`)
