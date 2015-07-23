@@ -18,17 +18,17 @@
 
 ## Syntax
 
-* [1.1](#1.1) <a name='1.1'></a> Always use single quotes `'`.
+* [1.1](#1.1) <a name='1.1'></a> Always use double quotes `"`.
 
 ```html
 <!-- Bad -->
 <div id=foo></div>
 
 <!-- Bad -->
-<div id="foo"></div>
+<div id='foo'></div>
 
 <!-- Good -->
-<div id='foo'></div>
+<div id="foo"></div>
 ```
 
 * [1.2](#1.2) <a name='1.2'></a> Always close self closing tags with a slash `/`.
@@ -41,10 +41,10 @@
 <p>Lorem ipsum<br />dolor sit</p>
 
 <!-- Bad -->
-<img src='path/to/image.png'>
+<img src="path/to/image.png">
 
 <!-- Good -->
-<img src='path/to/image.png' />
+<img src="path/to/image.png" />
 ```
 
 * [1.3](#1.3) <a name='1.3'></a> Always close optional closing tags.
@@ -99,7 +99,7 @@
 
 ```html
 <head>
-  <meta charset='utf-8'>
+  <meta charset="utf-8">
 </head>
 ```
 
@@ -110,7 +110,7 @@
 * [5.1](#5.1) <a name='5.1'></a> Internet Explorer supports the use of a document compatibility `<meta>` tag to specify what version of IE the page should be rendered. You should force edge mode.
 
 ```html
-<meta http-equiv='X-UA-Compatible' content='IE=Edge'>
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
 ```
 
 **[⬆ back to top](#toc)**
@@ -121,7 +121,7 @@
 
 ```html
 <!-- External CSS -->
-<link rel='stylesheet' href='path/to/external.css'>
+<link rel="stylesheet" href="path/to/external.css">
 
 <!-- Inline CSS -->
 <style>
@@ -129,7 +129,7 @@
 </style>
 
 <!-- JavaScript -->
-<script src='path/to/script.js'></script>
+<script src="path/to/script.js"></script>
 ```
 
 **[⬆ back to top](#toc)**
@@ -146,7 +146,7 @@
   7. Boolean attributes
 
 ```html
-<input id='user-input' name='user-input' class='u-pull-left input--big is-disabled' data-component='input-text' data-parameters='{value: 42}' type='text' disabled />
+<input id="user-input" name="user-input" class="u-pull-left input--big is-disabled" data-component="input-text" data-parameters="{value: 42}" type="text" disabled />
 ```
 
 **[⬆ back to top](#toc)**
@@ -157,16 +157,16 @@
 
 ```html
 <!-- Bad -->
-<input type='checkbox' value='Bar' checked='checked'>Foo</input>
+<input type="checkbox" value="Bar" checked="checked">Foo</input>
 
 <!-- Good -->
-<input type='checkbox' value='Bar' checked>Foo</input>
+<input type="checkbox" value="Bar" checked>Foo</input>
 
 <!-- Bad -->
-<input type='submit' disabled='disabled'>Send email</input>
+<input type="submit" disabled="disabled">Send email</input>
 
 <!-- Good -->
-<input type='submit' disabled>Send email</input>
+<input type="submit" disabled>Send email</input>
 ```
 
 **[⬆ back to top](#toc)**
@@ -176,13 +176,13 @@
 * [9.1](#9.1) <a name='9.1'></a> JavaScript hooks should be declared as `component` data attribute.
 
 ```html
-<button class='c-button c-button--big' data-component='buy-it-button'>Buy it</button>
+<button class="c-button c-button--big" data-component="buy-it-button">Buy it</button>
 ```
 
 * [9.2](#9.2) <a name='9.2'></a> Always use `parameters` data attribute for component parameters following the literal object syntax.
 
 ```html
-<div class='c-carousel' data-component='carousel' data-parameters='{direction: "left-to-right", speed: 2.5, easing: "easeOutExpo"}'>
+<div class="c-carousel" data-component="carousel" data-parameters="{direction: 'left-to-right', speed: 2.5, easing: 'easeOutExpo'}">
   <!-- ... -->
 </div>
 ```
@@ -199,9 +199,9 @@
 
 ```html
 <div
-  class='modal'
-  id='main-modal'
-  style='display: none;'
+  class="modal"
+  id="main-modal"
+  style="display: none;"
   hidden
 >
 </div>
@@ -211,10 +211,10 @@
 
 ```html
 <!-- Bad -->
-<img src='doge.png'/>
+<img src="doge.png"/>
 
 <!-- Good -->
-<img src='doge.png' />
+<img src="doge.png" />
 ```
 
 **[⬆ back to top](#toc)**
