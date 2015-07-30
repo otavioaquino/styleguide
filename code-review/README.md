@@ -23,6 +23,10 @@
 
 > Interactive rebase is our best friend and we should use it to enforce meaningful SCM history.
 
+* [1.4](#1.4) <a name='1.4'></a> Name your pull request following the same pattern used in commits by our [SCM](https://github.com/netshoes/styleguide/tree/master/scm#change-type) section.
+
+> This will make easier to understand what is this pull request about.
+
 **[⬆ back to top](#toc)**
 
 ## Reviewing
