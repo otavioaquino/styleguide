@@ -4,7 +4,7 @@
 
 ## Goal
 
-> It’s harder to read code than to write it.
+> It’s harder to read code than to write it. - Joel Spolsky
 
 The goal of this repository is to document the standards we use to write and publish code at [Netshoes](http://netshoes.com.br).
 
