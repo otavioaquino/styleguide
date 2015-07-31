@@ -33,4 +33,4 @@ Created and maintened by [a whole bunch of great people at Netshoes](https://git
 
 ## License
 
-[BSD](https://github.com/netshoes/styleguide/blob/master/LICENSE) © [Netshoes](http://netshoes.com.br)
+[![CC0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/cc-zero.svg)](http://creativecommons.org/publicdomain/zero/1.0)
