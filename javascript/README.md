@@ -921,6 +921,18 @@ function onClick() {
 }
 ```
 
+* [16.8](#16.8) <a name='16.8'></a> Use uppercase when naming "constant likes" variables.
+
+```javascript
+// Bad
+var esc_key = 27;
+var rightKey = 39;
+
+// Good
+var ESC_KEY = 27;
+var RIGHT_KEY = 39;
+```
+
 **[⬆ back to top](#toc)**
 
 ## Whitespace
