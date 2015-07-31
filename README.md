@@ -27,7 +27,7 @@ If you have something you want to add, remove or improve, feel free to [open an 
 
 ## Credits
 
-Created and maintened by [a whole bunch of great people at Netshoes](https://github.com/netshoes/styleguide/graphs/contributors).
+Created and maintened by [a whole bunch of great people](https://github.com/netshoes/styleguide/graphs/contributors).
 
 ![Netshoes](./netshoes.png)
 
