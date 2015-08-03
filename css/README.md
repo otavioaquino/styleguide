@@ -8,7 +8,7 @@
 2. [Syntax](#syntax)
 3. [Best practices](#best-practices)
 4. [Colors](#colors)
-5. [Units](#units)
+5. [Numbers and units](#numbers-and-units)
 6. [Inline assets](#inline-assets)
 7. [Pseudo elements](#pseudo-elements)
 8. [Specificity and nesting](#specificity-and-nesting)
